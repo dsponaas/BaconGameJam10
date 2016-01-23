@@ -27,7 +27,6 @@ public class PositionSystem extends IteratingSystem {
         super(Family.all(PositionComponent.class).get(), priority);
     }
 
-    private static final float WORLD_WRAP_BUFFER_HACK = 20f;
     public void processEntity(Entity entity, float deltaTime) {
         PositionComponent positionComponent = _positionComponents.get(entity);
         SpriteComponent spriteComponent = _spriteComponents.get(entity);
@@ -50,23 +49,21 @@ public class PositionSystem extends IteratingSystem {
         spriteComponent.sprite.setRotation((float)Math.toDegrees(positionComponent.rotation));
 
         GameState gameState = GameState.getInstance();
-        Rectangle boundingRect = spriteComponent.sprite.getBoundingRectangle();
-        if(boundingRect.x > gameState.getMaxGameboardX()) {
-//            float centerX = boundingRect.x + (boundingRect.getWidth() / 2);
-            float newX = (GameState.getInstance().getMinGameboardX() - boundingRect.width + WORLD_WRAP_BUFFER_HACK) * Constants.PIXELS_TO_METERS;
+        if(spriteComponent.sprite.getX() > gameState.getMaxGameboardX()) {
+            float newX = (GameState.getInstance().getMinGameboardX() - (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
             bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
         }
-        else if((boundingRect.x + boundingRect.width) < gameState.getMinGameboardX()) {
-//            float newX = (GameState.getInstance().getMaxGameboardX() + boundingRect.width - WORLD_WRAP_BUFFER_HACK) * Constants.PIXELS_TO_METERS;
-//            bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
+        else if((spriteComponent.sprite.getX() + spriteWidth) < gameState.getMinGameboardX()) {
+            float newX = (GameState.getInstance().getMaxGameboardX() + (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
+            bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
         }
-        if (boundingRect.y > gameState.getMaxGameboardY()) {
-//            float newY = (GameState.getInstance().getMinGameboardY() - boundingRect.height + WORLD_WRAP_BUFFER_HACK) * Constants.PIXELS_TO_METERS;
-//            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
+        if (spriteComponent.sprite.getY() > gameState.getMaxGameboardY()) {
+            float newY = (GameState.getInstance().getMinGameboardY() - (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
+            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
         }
-        else if((boundingRect.y + boundingRect.height) < gameState.getMinGameboardY()) {
-//            float newY = (GameState.getInstance().getMaxGameboardY() + boundingRect.height - WORLD_WRAP_BUFFER_HACK) * Constants.PIXELS_TO_METERS;
-//            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
+        else if((spriteComponent.sprite.getY() + spriteHeight) < gameState.getMinGameboardY()) {
+            float newY = (GameState.getInstance().getMaxGameboardY() + (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
+            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
         }
     }
 

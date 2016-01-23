@@ -58,13 +58,13 @@ public class ContactManager implements ContactListener {
 
         else if((Constants.BITMASK_PLAYER == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityA);
-            if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
-                killPlayer(entityA, bodyA, fixtureA, playerDataComponent);
+//            if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
+//                killPlayer(entityA, bodyA, fixtureA, playerDataComponent);
         }
         else if((Constants.BITMASK_PLAYER == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityB);
-            if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
-                killPlayer(entityB, bodyB, fixtureB, playerDataComponent);
+//            if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
+//                killPlayer(entityB, bodyB, fixtureB, playerDataComponent);
         }
 
         else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER == fixtureBType)) {
