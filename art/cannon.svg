@@ -138,5 +138,11 @@
        cy="25.705416"
        r="1.6571971"
        transform="matrix(0,-1,1,0,0,0)" />
+    <path
+       style="fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 12.505412,-15.495847 c 2.092312,2.159425 2.520815,5.138237 0.957097,6.6533575 -1.563722,1.5151226 -7.6087454,5.5466951 -9.7010573,3.3872699 -2.0923122,-2.1594256 0.5604035,-9.6921184 2.1241254,-11.2072404 1.5637222,-1.515122 4.5275229,-0.992813 6.6198349,1.166613 z"
+       id="path4264"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss" />
   </g>
 </svg>
