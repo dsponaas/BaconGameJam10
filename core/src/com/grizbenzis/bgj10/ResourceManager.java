@@ -23,6 +23,13 @@ public class ResourceManager {
         _textures.put("splashscreen", new Texture("splashscreen.png"));
         _textures.put("background", new Texture("background.png"));
         _textures.put("player", new Texture("player.png"));
+        _textures.put("powerup_rpd", new Texture("powerup_rpd.png"));
+        _textures.put("powerup_sprd", new Texture("powerup_sprd.png"));
+        _textures.put("powerup_2x", new Texture("powerup_2x.png"));
+        _textures.put("powerup_1up", new Texture("powerup_1up.png"));
+        _textures.put("powerup_sprd_small", new Texture("powerup_sprd_small.png"));
+        _textures.put("powerup_rpd_small", new Texture("powerup_rpd_small.png"));
+        _textures.put("powerup_2x_small", new Texture("powerup_2x_small.png"));
 
         initFonts();
     }

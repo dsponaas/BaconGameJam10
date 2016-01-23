@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
+   id="svg7568"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="powerup_sprd.svg"
+   inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam9/desktop/assets/powerupexplsmall.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs7570" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.2"
+     inkscape:cx="-10.756953"
+     inkscape:cy="17.119269"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="775"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7573">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1032.3622)">
+    <ellipse
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="path6943"
+       cx="9.8660707"
+       cy="1042.5408"
+       rx="10.01514"
+       ry="10.072564"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/sponaas/workspace/sht-jam-2015/desktop/assets/powerup_sprd.png" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1"
+       id="path6943-8"
+       cx="9.714736"
+       cy="1042.6268"
+       rx="7.9263954"
+       ry="7.9718428"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.39982986px;line-height:125%;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3.3395705"
+       y="805.58173"
+       id="text4246"
+       sodipodi:linespacing="125%"
+       transform="scale(0.77034021,1.2981277)"><tspan
+         sodipodi:role="line"
+         id="tspan4248"
+         x="3.3395705"
+         y="805.58173">SPRD</tspan></text>
+  </g>
+</svg>
