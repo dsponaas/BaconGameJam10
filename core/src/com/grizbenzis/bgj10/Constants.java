@@ -24,14 +24,16 @@ public class Constants {
     public static final short BITMASK_POWERUP = 0x0010;
 
     public static final float PLAYER_ROTATION_SPEED = 0.1f;
-    public static final float BULLET_SPEED = .03f;
-    public static final float SHOOTING_COOLDOWN = 60f;
-    public static final float SHOOTING_CHARGE_TIME = 60f;
+    public static final float BULLET_SPEED = .1f;
+    public static final float SHOOTING_COOLDOWN = 20f;
+    public static final float SHOOTING_CHARGE_TIME = 20f;
     public static final float PLAYER_DEATH_TIME = 180f;
     public static final float PLAYER_INVINCIBILITY_TIME = 180f;
     public static final float SPREAD_SHOT_ANGLE = (float)Math.PI * 0.1f;
     public static final float SHOOTING_MIN_POWER_FACTOR = 0.3f;
     public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
+
+    public static final float ASTEROID_SPAWN_SPEED_FACTOR = 1.5f;
 
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;
