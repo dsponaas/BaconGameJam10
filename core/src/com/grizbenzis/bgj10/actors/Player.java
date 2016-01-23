@@ -207,7 +207,10 @@ public class Player extends Actor {
     }
 
     public float getWeaponCharge() {
-        return (Constants.SHOOTING_CHARGE_TIME - _weaponTimer) / Constants.SHOOTING_CHARGE_TIME;
+        float retval = (Constants.SHOOTING_CHARGE_TIME - _weaponTimer) / Constants.SHOOTING_CHARGE_TIME;
+        if(retval > 1f)
+            retval = 1f;
+        return retval;
     }
 
 }
