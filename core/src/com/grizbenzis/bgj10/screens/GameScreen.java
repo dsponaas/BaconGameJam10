@@ -4,11 +4,13 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -34,6 +36,7 @@ public class GameScreen implements Screen {
     private int _screenWidth, _screenHeight;
     private SpriteBatch _spriteBatch;
     private SpriteBatch _hudBatch;
+    private ShapeRenderer _shapeRenderer;
 
     private Sprite _backgroundSprite;
 
@@ -68,6 +71,8 @@ public class GameScreen implements Screen {
         inputMultiplexer.addProcessor(_inputManager);
         Gdx.input.setInputProcessor(inputMultiplexer);
 
+        _shapeRenderer = new ShapeRenderer();
+
         _backgroundSprite = new Sprite(ResourceManager.getTexture("background"));
         _backgroundSprite.setPosition(0f, 0f);
     }
@@ -96,6 +101,10 @@ public class GameScreen implements Screen {
         _spriteBatch.end();
 
         renderHud();
+
+        _shapeRenderer.setProjectionMatrix(_camera.combined);
+        renderShotCharges();
+        _shapeRenderer.end();
 
         EntityManager.getInstance().update();
 
@@ -183,4 +192,48 @@ public class GameScreen implements Screen {
         }
     }
 
+    private static float SHOT_CHARGE_HACK = 0f;
+    private void renderShotCharges() {
+        Player player = GameState.getInstance().getPlayer();
+        Vector2 pos = player.getCenterPos();
+
+        pos.y += 50f; //TODO: WARNING! Magic number
+        float width = 50f; //TODO: WARNING! Magic number
+        float height = 10f; //TODO: WARNING! Magic number
+        float buffer = 1f; //TODO: WARNING! Magic number
+
+        Constants.WeaponState weaponState = player.getWeaponState();
+        if (weaponState == Constants.WeaponState.CHARGING) {
+            SHOT_CHARGE_HACK = player.getWeaponCharge();
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(0f, 0f, 0f, 0.3f));
+            _shapeRenderer.rect(pos.x - (width / 2f), pos.y, width, height);
+            _shapeRenderer.end();
+
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(1f, 0f, 0f, 0.5f));
+            _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, width - (2f * buffer), height - (2f * buffer));
+            _shapeRenderer.end();
+
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(0f, 1f, 0f, 0.8f));
+            _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, SHOT_CHARGE_HACK * width - (2f * buffer), (height - (2f * buffer)));
+            _shapeRenderer.end();
+        } else if (weaponState == Constants.WeaponState.COOL_DOWN) {
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(0f, 0f, 0f, 0.2f));
+            _shapeRenderer.rect(pos.x - (width / 2f), pos.y, width, height);
+            _shapeRenderer.end();
+
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(0.3f, 0f, 0f, 0.2f));
+            _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, width - (2f * buffer), height - (2f * buffer));
+            _shapeRenderer.end();
+
+            _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            _shapeRenderer.setColor(new Color(0f, 0.3f, 0f, 0.2f));
+            _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, SHOT_CHARGE_HACK * width - (2f * buffer), (height - (2f * buffer)));
+            _shapeRenderer.end();
+        }
+    }
 }
