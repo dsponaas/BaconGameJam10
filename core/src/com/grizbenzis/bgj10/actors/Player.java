@@ -116,7 +116,7 @@ public class Player extends Actor {
             case READY: {
                 if(InputManager.shootingActive) {
                     _weaponState = Constants.WeaponState.CHARGING;
-                    _weaponTimer = 5f; // TODO: IMPLEMENT ME FOR REAL
+                    _weaponTimer = Constants.SHOOTING_CHARGE_TIME;
                 }
                 break;
             }
@@ -124,7 +124,7 @@ public class Player extends Actor {
                 if(!InputManager.shootingActive) {
                     fire();
                     _weaponState = Constants.WeaponState.COOL_DOWN;
-                    _weaponTimer = 5f; // TODO: IMPLEMENT ME FOR REAL
+                    _weaponTimer = Constants.SHOOTING_COOLDOWN;
                 }
                 break;
             }
@@ -150,7 +150,12 @@ public class Player extends Actor {
             rotation += Constants.TWO_PI;
         }
 
-        float power = 1f; // TODO: set power for real
+        if(_weaponTimer < 0f) {
+            _weaponTimer = 0f;
+        }
+        float weaponCharge = (Constants.SHOOTING_CHARGE_TIME - _weaponTimer) / Constants.SHOOTING_CHARGE_TIME;
+        float power = Constants.SHOOTING_MIN_POWER_FACTOR + ((Constants.SHOOTING_MAX_POWER_FACTOR - Constants.SHOOTING_MIN_POWER_FACTOR) * weaponCharge);
+
         shoot(pos.x, pos.y, rotation, power);
         if(GameState.getInstance().getPlayerData().spreadShotTime > 0f) {
             float leftShotRotation = rotation - Constants.SPREAD_SHOT_ANGLE;
