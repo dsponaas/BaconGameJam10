@@ -14,7 +14,7 @@ public class Constants {
 
     public static final float TOP_OF_SCREEN_BUFFER = 30f;
 
-    public static final float BASE_SPAWN_TIMER = 120f;
+    public static final float BASE_SPAWN_TIMER = 1400f;
     public static final float TIME_PER_LEVEL = 600f;
 
     public static final short BITMASK_PLAYER = 0x0001;
@@ -34,10 +34,13 @@ public class Constants {
     public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
 
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 1.0f;
+    public static final float LARGE_ASTEROID_TORQUE_FACTOR = 100f;
     public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
     public static final int MEDIUM_ASTEROID_SPAWN_QUANTITY = 2;
+    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 1f;
     public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
+    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1f;
 
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;

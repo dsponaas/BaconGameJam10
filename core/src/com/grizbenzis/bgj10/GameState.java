@@ -60,7 +60,7 @@ public class GameState {
 
         _lives = 2;
 
-        _enemySpawnTimer = getSpawnTimer();
+        _enemySpawnTimer = 0f;
     }
 
     public static void initialize(float width, float height) {
@@ -156,6 +156,12 @@ public class GameState {
         Vector2 impulse = posAndVel[1].scl(Constants.LARGE_ASTEROID_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
         bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
 
+        float torque = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            torque *= -1f;
+        torque *= Constants.LARGE_ASTEROID_TORQUE_FACTOR;
+        bodyComponent.body.applyTorque(torque, true);
+
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
         EntityManager.getInstance().addEntity(entity);
@@ -183,6 +189,12 @@ public class GameState {
 
         Vector2 impulse = startVel.scl(bodyComponent.body.getMass());
         bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+
+        float torque = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            torque *= -1f;
+        torque *= Constants.MEDIUM_ASTEROID_TORQUE_FACTOR;
+        bodyComponent.body.applyTorque(torque, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
@@ -213,6 +225,12 @@ public class GameState {
 
         Vector2 impulse = startVel.scl(bodyComponent.body.getMass());
         bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+
+        float torque = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            torque *= -1f;
+        torque *= Constants.SMALL_ASTEROID_TORQUE_FACTOR;
+        bodyComponent.body.applyTorque(torque, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 

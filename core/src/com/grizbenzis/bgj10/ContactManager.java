@@ -39,22 +39,20 @@ public class ContactManager implements ContactListener {
         Entity entityB = (Entity)fixtureB.getUserData();
 
         if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_LEVEL_BOUNDS == fixtureBType)) {
-            Gdx.app.log(Constants.LOG_TAG, "CRAPTAR!");
             EntityManager.getInstance().destroyEntity(entityA);
         }
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_LEVEL_BOUNDS == fixtureAType)) {
-            Gdx.app.log(Constants.LOG_TAG, "CRAPTAR!");
             EntityManager.getInstance().destroyEntity(entityB);
         }
 
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
-            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityB.getComponent(EnemyDataComponent.class);
+            EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
             EntityManager.getInstance().destroyEntity(entityA);
         }
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
-            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityA.getComponent(EnemyDataComponent.class);
+            EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
             EntityManager.getInstance().destroyEntity(entityB);
@@ -87,7 +85,6 @@ public class ContactManager implements ContactListener {
         fixture.setFilterData(filter);
 
         enemyDataComponent.alive = false;
-        Gdx.app.log(Constants.LOG_TAG, "DEAD ENEMY");
     }
 
     private void killPlayer(Entity entity, Body body, Fixture fixture, PlayerDataComponent playerDataComponent) {
