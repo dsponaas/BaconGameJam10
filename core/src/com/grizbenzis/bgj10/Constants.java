@@ -14,8 +14,8 @@ public class Constants {
 
     public static final float TOP_OF_SCREEN_BUFFER = 30f;
 
-    public static final float BASE_SPAWN_TIMER = 600f;
-    public static final float TIME_PER_LEVEL = 600f;
+    public static final float BASE_SPAWN_TIMER = 1000f;
+    public static final float TIME_PER_LEVEL = 1000f;
     public static final int INITIAL_LIVES_COUNT = 10;
 
     public static final short BITMASK_PLAYER = 0x0001;

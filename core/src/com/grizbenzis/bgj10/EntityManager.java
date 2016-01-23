@@ -1,16 +1,20 @@
 package com.grizbenzis.bgj10;
 
+import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.grizbenzis.bgj10.actors.Actor;
 import com.grizbenzis.bgj10.components.BodyComponent;
+import com.grizbenzis.bgj10.components.EnemyDataComponent;
 
 /**
  * Created by sponaas on 1/22/16.
  */
 public class EntityManager {
+
+    private ComponentMapper<EnemyDataComponent> _enemyDataComponents = ComponentMapper.getFor(EnemyDataComponent.class);
 
     private static EntityManager _instance;
     private Engine _engine;
@@ -40,10 +44,14 @@ public class EntityManager {
     }
 
     public void addEntity(Entity entity) {
+        if(_enemyDataComponents.has(entity))
+            GameState.getInstance().addEnemy();
         _engine.addEntity(entity);
     }
 
     public void destroyEntity(Entity entity) {
+        if(_enemyDataComponents.has(entity))
+            GameState.getInstance().removeEnemy();
         _toDestroy.add(entity);
     }
 

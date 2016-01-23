@@ -21,6 +21,13 @@ public class GameState {
     private float _enemySpawnTimer;
     private float _powerupSpawnTimer;
     private Random _rand;
+    private int _enemyCount;
+    public void addEnemy() {
+        ++_enemyCount;
+    }
+    public void removeEnemy() {
+        --_enemyCount;
+    }
 
     private float _levelTimer;
     private int _level;
@@ -62,6 +69,7 @@ public class GameState {
         _lives = Constants.INITIAL_LIVES_COUNT;
 
         _enemySpawnTimer = 0f;
+        _enemyCount = 0;
     }
 
     public static void initialize(float width, float height) {
@@ -82,7 +90,7 @@ public class GameState {
             _powerupSpawnTimer -= (float) Time.time;
         }
 
-        if(_enemySpawnTimer < 0f) {
+        if((_enemySpawnTimer < 0f) && (_enemyCount < getMaxEnemies())) {
             _enemySpawnTimer = getSpawnTimer();
             spawnLargeAsteroid();
         }
@@ -288,6 +296,21 @@ public class GameState {
         retval[0] = startPos;
         retval[1] = startVel;
         return retval;
+    }
+
+    public int getMaxEnemies() {
+        return _level + 4;
+//        switch(_level) {
+//            case 1: return 5;
+//            case 2: return 6;
+//            case 3: return 7;
+//            case 4: return 8;
+//            case 5: return 9;
+//            case 6: return 10;
+//            case 7: return 11;
+//            case 8: return 12;
+//            case 9: return 13;
+//        }
     }
 
 }
