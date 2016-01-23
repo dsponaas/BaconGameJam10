@@ -151,19 +151,19 @@ public class GameState {
         switch(getRandomInt(0, 3)) {
             case 0: { // TOP
                 startPos = new Vector2(getRandomFloat(0f, _width), _height);
-                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f)).scl(10f);
+                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f)).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
             }
             case 1: { // RIGHT
                 startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
             }
             case 2: { // BOTTOM
-                startPos = new Vector2(getRandomFloat(0f, _width), 0f);
+                startPos = new Vector2(getRandomFloat(0f, _width), 0f).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
                 startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, 1f));
             }
             case 3: { // LEFT
                 startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
             }
         }
 

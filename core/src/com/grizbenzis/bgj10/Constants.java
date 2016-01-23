@@ -33,6 +33,8 @@ public class Constants {
     public static final float SHOOTING_MIN_POWER_FACTOR = 0.3f;
     public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
 
+    public static final float ASTEROID_SPAWN_SPEED_FACTOR = 1.5f;
+
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;
 
