@@ -2,6 +2,7 @@ package com.grizbenzis.bgj10;
 
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.grizbenzis.bgj10.actors.Player;
@@ -160,6 +161,7 @@ public class GameState {
         if(_rand.nextBoolean())
             torque *= -1f;
         torque *= Constants.LARGE_ASTEROID_TORQUE_FACTOR;
+        Gdx.app.log(Constants.LOG_TAG, "ASTEROID TORQUE:" + torque);
         bodyComponent.body.applyTorque(torque, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);

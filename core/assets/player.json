@@ -12,6 +12,7 @@
       type: RectangleShape,
       width: 28,
       height: 50,
+      restitution: 0,
       x: 0,
       y: 0
     }

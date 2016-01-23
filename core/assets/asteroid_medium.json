@@ -1,6 +1,6 @@
 {
   BodyDef : {
-    fixedRotation: true,
+    fixedRotation: false,
     type: DynamicBody,
     gravityScale: 0,
     collisionType: ENEMY,
@@ -10,12 +10,12 @@
   Fixtures : [
     {
       description: none,
-      isSensor: true,
+      isSensor: false,
       type: CircleShape,
       radius: 20,
       density: 1,
       friction: 0,
-      restitution: 0,
+      restitution: 1,
       x: 0,
       y: 0
     }
