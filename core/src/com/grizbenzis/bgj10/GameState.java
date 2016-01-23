@@ -145,16 +145,39 @@ public class GameState {
 
         // TODO: add more types
 
-        float xPos = getRandomFloat(0f + ENEMY_LEVEL_BOUNDS_BUFFER, _width - ENEMY_LEVEL_BOUNDS_BUFFER);
-        float yPos = getRandomFloat(0f + ENEMY_LEVEL_BOUNDS_BUFFER, _height - Constants.TOP_OF_SCREEN_BUFFER - ENEMY_LEVEL_BOUNDS_BUFFER);
-        PositionComponent positionComponent = new PositionComponent(xPos, yPos);
+        float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
+        Vector2 startPos = null;
+        Vector2 startVel = null;
+        switch(getRandomInt(0, 3)) {
+            case 0: { // TOP
+                startPos = new Vector2(getRandomFloat(0f, _width), _height);
+                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f)).scl(10f);
+            }
+            case 1: { // RIGHT
+                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+            }
+            case 2: { // BOTTOM
+                startPos = new Vector2(getRandomFloat(0f, _width), 0f);
+                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, 1f));
+            }
+            case 3: { // LEFT
+                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+            }
+        }
+
+        PositionComponent positionComponent = new PositionComponent(startPos);
 
         Sprite sprite = new Sprite(ResourceManager.getTexture("asteroid_large"));
 
         SpriteComponent spriteComponent = new SpriteComponent(sprite);
-        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_large.json", new Vector2(xPos, yPos)));
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_large.json", startPos));
         EnemyDataComponent enemyDataComponent = new EnemyDataComponent(5); // TODO: point values
         RenderComponent renderComponent = new RenderComponent(0);
+
+        Vector2 impulse = startVel.scl(bodyComponent.body.getMass());
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
@@ -163,6 +186,9 @@ public class GameState {
 
     private float getRandomFloat(float start, float end) {
         return start + ((end - start) * _rand.nextFloat());
+    }
+    private int getRandomInt(int start, int end) {
+        return _rand.nextInt(end - start) + start;
     }
 
     public float getMinGameboardX() {
