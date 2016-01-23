@@ -15,7 +15,7 @@
    id="svg3403"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="splashscreen.svg"
+   sodipodi:docname="gameover.svg"
    inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam10/core/assets/splashscreen.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -67,18 +67,6 @@
        y="243.79073" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:95.84397888px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="178.10181"
-       y="404.95599"
-       id="text3413"
-       sodipodi:linespacing="125%"
-       transform="scale(0.55653892,1.7968195)"><tspan
-         sodipodi:role="line"
-         id="tspan3415"
-         x="178.10181"
-         y="404.95599">SPLASH SCREEN PLACEHOLDER</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:107.79794312px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="247.08565"
        y="621.97101"
@@ -89,5 +77,28 @@
          id="tspan3502"
          x="247.08565"
          y="621.97101">(PRESS ANY KEY)</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3512"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(3.2151803,0,0,8.7439823,-273.54645,-2129.8479)"><flowRegion
+         id="flowRegion3514"><rect
+           id="rect3516"
+           width="342.85715"
+           height="131.42857"
+           x="112.85714"
+           y="273.71429"
+           style="fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara3518">GAME OVER</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="118.57143"
+       y="712.36218"
+       id="text3520"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3522"
+         x="118.57143"
+         y="712.36218">you killed matt damon, you monster</tspan></text>
   </g>
 </svg>
