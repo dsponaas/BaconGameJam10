@@ -82,8 +82,8 @@ public class GameState {
         }
 
         if(_enemySpawnTimer < 0f) {
-            // TODO: SPAWN ENEMY
             _enemySpawnTimer = getSpawnTimer();
+            spawnEnemy();
         }
         if(_levelTimer < 0f) {
             ++_level;
@@ -135,6 +135,28 @@ public class GameState {
         RenderComponent renderComponent = new RenderComponent(0);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(powerupComponent).add(renderComponent);
+
+        EntityManager.getInstance().addEntity(entity);
+    }
+
+    private final float ENEMY_LEVEL_BOUNDS_BUFFER = 100f;
+    public void spawnEnemy() {
+        Entity entity = new Entity();
+
+        // TODO: add more types
+
+        float xPos = getRandomFloat(0f + ENEMY_LEVEL_BOUNDS_BUFFER, _width - ENEMY_LEVEL_BOUNDS_BUFFER);
+        float yPos = getRandomFloat(0f + ENEMY_LEVEL_BOUNDS_BUFFER, _height - Constants.TOP_OF_SCREEN_BUFFER - ENEMY_LEVEL_BOUNDS_BUFFER);
+        PositionComponent positionComponent = new PositionComponent(xPos, yPos);
+
+        Sprite sprite = new Sprite(ResourceManager.getTexture("asteroid_large"));
+
+        SpriteComponent spriteComponent = new SpriteComponent(sprite);
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_large.json", new Vector2(xPos, yPos)));
+        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(5); // TODO: point values
+        RenderComponent renderComponent = new RenderComponent(0);
+
+        entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
         EntityManager.getInstance().addEntity(entity);
     }

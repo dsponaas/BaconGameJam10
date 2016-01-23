@@ -31,6 +31,7 @@ public class ResourceManager {
         _textures.put("powerup_rpd_small", new Texture("powerup_rpd_small.png"));
         _textures.put("powerup_2x_small", new Texture("powerup_2x_small.png"));
         _textures.put("bullet", new Texture("bullet.png"));
+        _textures.put("asteroid_large", new Texture("asteroid_large.png"));
 
         initFonts();
     }
