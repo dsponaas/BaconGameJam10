@@ -1,0 +1,18 @@
+{
+  BodyDef : {
+    type: DynamicBody,
+    collisionType: PLAYER_BULLET,
+    dimensionX: 4,
+    dimensionY: 4
+  },
+  Fixtures : [
+    {
+      description: none,
+      isSensor: true,
+      type: CircleShape,
+      radius: 4,
+      x: 0,
+      y: 0
+    }
+  ]
+}

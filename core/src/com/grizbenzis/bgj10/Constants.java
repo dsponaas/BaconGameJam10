@@ -5,6 +5,7 @@ package com.grizbenzis.bgj10;
  */
 public class Constants {
     public static final float TWO_PI = 2f * (float)Math.PI;
+    public static final float ONE_AND_A_HALF_PI = 1.5f * (float)Math.PI;
     public static final float PIXELS_TO_METERS = 0.01f;
     public static final float METERS_TO_PIXELS = 100f;
 
@@ -23,10 +24,11 @@ public class Constants {
     public static final short BITMASK_POWERUP = 0x0010;
 
     public static final float PLAYER_ROTATION_SPEED = 0.1f;
-    public static final float BULLET_SPEED = .04f;
+    public static final float BULLET_SPEED = .03f;
     public static final float PLAYER_SHOOTING_COOLDOWN = 40f;
     public static final float PLAYER_DEATH_TIME = 180f;
     public static final float PLAYER_INVINCIBILITY_TIME = 180f;
+    public static final float SPREAD_SHOT_ANGLE = (float)Math.PI * 0.25f;
 
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;
@@ -50,6 +52,12 @@ public class Constants {
             }
             return null;
         }
+    }
+
+    public enum WeaponState {
+        READY,
+        CHARGING,
+        COOL_DOWN,
     }
 
 }

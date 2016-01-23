@@ -99,7 +99,7 @@ public class GameScreen implements Screen {
 
         EntityManager.getInstance().update();
 
-        _debugRenderer.render(_world, debugMatrix);
+//        _debugRenderer.render(_world, debugMatrix);
     }
 
     @Override
