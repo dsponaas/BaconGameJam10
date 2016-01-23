@@ -16,6 +16,7 @@ public class Constants {
 
     public static final float BASE_SPAWN_TIMER = 600f;
     public static final float TIME_PER_LEVEL = 600f;
+    public static final int INITIAL_LIVES_COUNT = 10;
 
     public static final short BITMASK_PLAYER = 0x0001;
     public static final short BITMASK_ENEMY = 0x0002;
@@ -23,7 +24,7 @@ public class Constants {
     public static final short BITMASK_PLAYER_BULLET = 0x0008;
     public static final short BITMASK_POWERUP = 0x0010;
 
-    public static final float PLAYER_ROTATION_SPEED = 0.1f;
+    public static final float PLAYER_ROTATION_SPEED = 0.08f;
     public static final float BULLET_SPEED = .1f;
     public static final float SHOOTING_COOLDOWN = 20f;
     public static final float SHOOTING_CHARGE_TIME = 20f;
@@ -33,14 +34,14 @@ public class Constants {
     public static final float SHOOTING_MIN_POWER_FACTOR = 0.3f;
     public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
 
-    public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 1.0f;
+    public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;
     public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1000f;
-    public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
+    public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = .5f;
     public static final int MEDIUM_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 1f;
-    public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
+    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 1000f;
+    public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = .3f;
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1f;
+    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1000f;
 
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;

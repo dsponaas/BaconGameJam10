@@ -59,7 +59,7 @@ public class GameState {
 
         _powerupSpawnTimer = Constants.TIME_BETWEEN_POWERUPS;
 
-        _lives = 2;
+        _lives = Constants.INITIAL_LIVES_COUNT;
 
         _enemySpawnTimer = 0f;
     }
