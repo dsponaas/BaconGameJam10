@@ -37,6 +37,8 @@ public class ResourceManager {
         _textures.put("asteroid_small", new Texture("asteroid_small.png"));
         _textures.put("alien", new Texture("alien.png"));
         _textures.put("gameover", new Texture("gameover.png"));
+        _textures.put("explosion", new Texture("explosion.png"));
+        _textures.put("explosion_large", new Texture("explosion_large.png"));
 
         initFonts();
     }
