@@ -19,6 +19,7 @@ public class ContactManager implements ContactListener {
     private ComponentMapper<BodyComponent> _bodyComponents = ComponentMapper.getFor(BodyComponent.class);
     private ComponentMapper<SpriteComponent> _spriteComponents = ComponentMapper.getFor(SpriteComponent.class);
     private ComponentMapper<PlayerDataComponent> _playerDataComponents = ComponentMapper.getFor(PlayerDataComponent.class);
+    private ComponentMapper<PositionComponent> _positionComponents = ComponentMapper.getFor(PositionComponent.class);
 
     public ContactManager(Engine engine, World world) {
         _engine = engine;
@@ -47,13 +48,13 @@ public class ContactManager implements ContactListener {
         }
 
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
-            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityB.remove(EnemyDataComponent.class);
+            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityB.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
             EntityManager.getInstance().destroyEntity(entityA);
         }
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
-            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityA.remove(EnemyDataComponent.class);
+            EnemyDataComponent enemyDataComponent = (EnemyDataComponent)entityA.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
             EntityManager.getInstance().destroyEntity(entityB);
@@ -85,15 +86,8 @@ public class ContactManager implements ContactListener {
         filter.maskBits = 0;
         fixture.setFilterData(filter);
 
-        Vector2 velocity = body.getLinearVelocity();
-        Vector2 desiredVelocity = new Vector2(0f, 0f);
-        desiredVelocity.sub(velocity).scl(body.getMass());
-        body.applyLinearImpulse(desiredVelocity.x, desiredVelocity.y, body.getWorldCenter().x, body.getWorldCenter().y, true);
-
-//        SpriteComponent spriteComponent = _spriteComponents.get(entity); TODO: add some sort of death sprite/anim
-        entity.remove(RenderComponent.class);
-
-        GameState.getInstance().incrementScore(enemyDataComponent.points);
+        enemyDataComponent.alive = false;
+        Gdx.app.log(Constants.LOG_TAG, "DEAD ENEMY");
     }
 
     private void killPlayer(Entity entity, Body body, Fixture fixture, PlayerDataComponent playerDataComponent) {

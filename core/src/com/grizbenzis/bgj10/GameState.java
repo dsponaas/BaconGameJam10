@@ -83,7 +83,7 @@ public class GameState {
 
         if(_enemySpawnTimer < 0f) {
             _enemySpawnTimer = getSpawnTimer();
-            spawnEnemy();
+            spawnLargeAsteroid();
         }
         if(_levelTimer < 0f) {
             ++_level;
@@ -139,41 +139,76 @@ public class GameState {
         EntityManager.getInstance().addEntity(entity);
     }
 
-    private final float ENEMY_LEVEL_BOUNDS_BUFFER = 100f;
-    public void spawnEnemy() {
+    public void spawnLargeAsteroid() {
         Entity entity = new Entity();
 
-        // TODO: add more types
+        Vector2[] posAndVel = initPosAndVel();
 
-        float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
-        Vector2 startPos = null;
-        Vector2 startVel = null;
-        switch(getRandomInt(0, 3)) {
-            case 0: { // TOP
-                startPos = new Vector2(getRandomFloat(0f, _width), _height);
-                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f)).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
-            }
-            case 1: { // RIGHT
-                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
-            }
-            case 2: { // BOTTOM
-                startPos = new Vector2(getRandomFloat(0f, _width), 0f).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
-                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, 1f));
-            }
-            case 3: { // LEFT
-                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent).scl(Constants.ASTEROID_SPAWN_SPEED_FACTOR);
-            }
-        }
-
-        PositionComponent positionComponent = new PositionComponent(startPos);
+        PositionComponent positionComponent = new PositionComponent(posAndVel[0]);
 
         Sprite sprite = new Sprite(ResourceManager.getTexture("asteroid_large"));
 
         SpriteComponent spriteComponent = new SpriteComponent(sprite);
-        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_large.json", startPos));
-        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(5); // TODO: point values
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_large.json", posAndVel[0]));
+        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(Constants.EnemyType.ASTEROID_LARGE);
+        RenderComponent renderComponent = new RenderComponent(0);
+
+        Vector2 impulse = posAndVel[1].scl(Constants.LARGE_ASTEROID_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+
+        entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
+
+        EntityManager.getInstance().addEntity(entity);
+    }
+
+    public void spawnMediumAsteroid(Vector2 startPos, Vector2 startVel) {
+        Entity entity = new Entity();
+
+        PositionComponent positionComponent = new PositionComponent(startPos);
+        float deltaX = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            deltaX *= -1;
+        float deltaY = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            deltaY *= -1;
+        Vector2 deltaVel = new Vector2(deltaX, deltaY).scl(Constants.MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR);
+        startVel = deltaVel.add(startVel);
+
+        Sprite sprite = new Sprite(ResourceManager.getTexture("asteroid_medium"));
+
+        SpriteComponent spriteComponent = new SpriteComponent(sprite);
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_medium.json", startPos));
+        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(Constants.EnemyType.ASTEROID_MEDIUM);
+        RenderComponent renderComponent = new RenderComponent(0);
+
+        Vector2 impulse = startVel.scl(bodyComponent.body.getMass());
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+
+        entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
+
+        EntityManager.getInstance().addEntity(entity);
+    }
+
+    public void spawnSmallAsteroid(Vector2 startPos, Vector2 startVel) {
+        Entity entity = new Entity();
+
+        PositionComponent positionComponent = new PositionComponent(startPos);
+        float deltaX = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            deltaX *= -1;
+        float deltaY = getRandomFloat(0.5f, 1f);
+        if(_rand.nextBoolean())
+            deltaY *= -1;
+        Vector2 deltaVel = new Vector2(deltaX, deltaY).scl(Constants.SMALL_ASTEROID_SPAWN_SPEED_FACTOR);
+        startVel = deltaVel.add(startVel);
+
+        Sprite sprite = new Sprite(ResourceManager.getTexture("asteroid_small"));
+
+        SpriteComponent spriteComponent = new SpriteComponent(sprite);
+        sprite.rotate(getRandomFloat(0f, 360f));
+
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "asteroid_small.json", startPos));
+        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(Constants.EnemyType.ASTEROID_SMALL);
         RenderComponent renderComponent = new RenderComponent(0);
 
         Vector2 impulse = startVel.scl(bodyComponent.body.getMass());
@@ -205,6 +240,34 @@ public class GameState {
 
     public float getMaxGameboardY() {
         return _height;
+    }
+
+    private Vector2[] initPosAndVel() {
+        Vector2[] retval = new Vector2[2];
+        float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
+        Vector2 startPos = null;
+        Vector2 startVel = null;
+        switch(getRandomInt(0, 3)) {
+            case 0: { // TOP
+                startPos = new Vector2(getRandomFloat(0f, _width), _height);
+                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f));
+            }
+            case 1: { // RIGHT
+                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+            }
+            case 2: { // BOTTOM
+                startPos = new Vector2(getRandomFloat(0f, _width), 0f);
+                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, 1f));
+            }
+            case 3: { // LEFT
+                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+            }
+        }
+        retval[0] = startPos;
+        retval[1] = startVel;
+        return retval;
     }
 
 }

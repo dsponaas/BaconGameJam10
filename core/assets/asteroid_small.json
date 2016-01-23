@@ -4,15 +4,15 @@
     type: DynamicBody,
     gravityScale: 0,
     collisionType: ENEMY,
-    dimensionX: 80,
-    dimensionY: 80
+    dimensionX: 20,
+    dimensionY: 20
   },
   Fixtures : [
     {
       description: none,
       isSensor: true,
       type: CircleShape,
-      radius: 40,
+      radius: 10,
       density: 1,
       friction: 0,
       restitution: 0,

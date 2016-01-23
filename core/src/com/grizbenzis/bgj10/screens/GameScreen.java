@@ -17,10 +17,7 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.grizbenzis.bgj10.*;
 import com.grizbenzis.bgj10.actors.Player;
 import com.grizbenzis.bgj10.components.PlayerDataComponent;
-import com.grizbenzis.bgj10.systems.PlayerDataSystem;
-import com.grizbenzis.bgj10.systems.PositionSystem;
-import com.grizbenzis.bgj10.systems.PowerupSystem;
-import com.grizbenzis.bgj10.systems.RenderSpriteSystem;
+import com.grizbenzis.bgj10.systems.*;
 
 /**
  * Created by sponaas on 1/22/16.
@@ -108,7 +105,7 @@ public class GameScreen implements Screen {
 
         EntityManager.getInstance().update();
 
-//        _debugRenderer.render(_world, debugMatrix);
+        _debugRenderer.render(_world, debugMatrix);
     }
 
     @Override
@@ -163,11 +160,13 @@ public class GameScreen implements Screen {
         RenderSpriteSystem renderSpriteSystem = new RenderSpriteSystem(_spriteBatch, 1);
         PlayerDataSystem playerDataSystem = new PlayerDataSystem(2);
         PowerupSystem powerupSystem = new PowerupSystem(3);
+        EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(4);
 
         engine.addSystem(positionSystem);
         engine.addSystem(renderSpriteSystem);
         engine.addSystem(playerDataSystem);
         engine.addSystem(powerupSystem);
+        engine.addSystem(enemyDeathSystem);
 
         return engine;
     }

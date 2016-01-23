@@ -33,7 +33,11 @@ public class Constants {
     public static final float SHOOTING_MIN_POWER_FACTOR = 0.3f;
     public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
 
-    public static final float ASTEROID_SPAWN_SPEED_FACTOR = 1.5f;
+    public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 1.0f;
+    public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
+    public static final int MEDIUM_ASTEROID_SPAWN_QUANTITY = 2;
+    public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = 1.2f;
+    public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
 
     public static final float TIME_BETWEEN_POWERUPS = 600f;
     public static final float POWERUP_TIMER = 600f;
@@ -63,6 +67,12 @@ public class Constants {
         READY,
         CHARGING,
         COOL_DOWN,
+    }
+
+    public enum EnemyType {
+        ASTEROID_LARGE,
+        ASTEROID_MEDIUM,
+        ASTEROID_SMALL
     }
 
 }
