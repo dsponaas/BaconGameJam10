@@ -56,7 +56,7 @@ public class BodyFactory {
         else if(Constants.BITMASK_ENEMY == categoryBits)
             maskingBits = Constants.BITMASK_PLAYER | Constants.BITMASK_PLAYER_BULLET;
         else if(Constants.BITMASK_PLAYER == categoryBits)
-            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_LEVEL_BOUNDS | Constants.BITMASK_POWERUP;
+            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP;
         else if(Constants.BITMASK_POWERUP == categoryBits)
             maskingBits = Constants.BITMASK_PLAYER;
         else
