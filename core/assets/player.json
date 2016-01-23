@@ -3,7 +3,7 @@
     type: DynamicBody,
     collisionType: PLAYER,
     dimensionX: 15,
-    dimensionY: 40
+    dimensionY: 50
   },
   Fixtures : [
     {
@@ -11,7 +11,7 @@
       isSensor: false,
       type: RectangleShape,
       width: 7.5,
-      height: 20,
+      height: 25,
       x: 0,
       y: 0
     }
