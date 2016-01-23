@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="80"
@@ -17,7 +18,31 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="alien.svg">
   <defs
-     id="defs3344" />
+     id="defs3344">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4522">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4524" />
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:1"
+         offset="1"
+         id="stop4526" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4522"
+       id="radialGradient4528"
+       cx="39.754486"
+       cy="1047.1173"
+       fx="39.754486"
+       fy="1047.1173"
+       r="39.801701"
+       gradientTransform="matrix(1.0111506,1.5446111e-7,-2.6142377e-8,0.15065242,-0.44326031,888.5679)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,7 +51,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="10.59"
-     inkscape:cx="42.716985"
+     inkscape:cx="42.622556"
      inkscape:cy="19.242807"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -38,7 +63,9 @@
      inkscape:window-height="1155"
      inkscape:window-x="4"
      inkscape:window-y="1"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:snap-grids="false"
+     inkscape:snap-page="true" />
   <metadata
      id="metadata3347">
     <rdf:RDF>
@@ -57,7 +84,7 @@
      id="layer1"
      transform="translate(0,-1012.3621)">
     <ellipse
-       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#radialGradient4528);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3350"
        cx="39.990559"
        cy="1046.177"
@@ -65,7 +92,7 @@
        ry="5.9962225" />
     <path
        style="fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 55.071294,1027.3384 c -1.8e-5,4.1461 -0.736255,10.3547 -3.453283,13.0717 -2.717028,2.717 -7.414847,1.9424 -11.560882,1.9424 -4.146034,0 -9.599284,0.5858 -12.316312,-2.1312 -2.717028,-2.717 -2.697835,-8.7369 -2.697853,-12.8829 -3.6e-5,-8.2921 6.722057,-15.0142 15.014165,-15.0142 8.292108,0 15.014201,6.7221 15.014165,15.0142 z"
+       d="m 55.071294,1031.3384 c -1.8e-5,4.1461 -0.736255,10.3547 -3.453283,13.0717 -2.717028,2.717 -7.414847,2.4145 -11.560882,2.4145 -4.146034,0 -9.599284,0.1137 -12.316312,-2.6033 -2.717028,-2.717 -2.697835,-8.7369 -2.697853,-12.8829 -3.6e-5,-8.2921 6.627628,-18.8858 14.919736,-18.8858 8.292108,0 15.10863,10.5937 15.108594,18.8858 z"
        id="path3354"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssss" />
@@ -73,12 +100,12 @@
        style="fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3405"
        cx="40.084984"
-       cy="1026.9137"
+       cy="1030.9137"
        rx="11.378659"
-       ry="10.151086" />
+       ry="12.606233" />
     <g
        id="g3418"
-       transform="translate(1.4164306,0.56657224)">
+       transform="translate(1.4164306,2.5665722)">
       <ellipse
          ry="2.9745042"
          rx="3.068933"
@@ -94,7 +121,7 @@
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
-       transform="translate(9.4164306,0.56657224)"
+       transform="translate(9.4164306,2.5665722)"
        id="g3466">
       <ellipse
          style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
