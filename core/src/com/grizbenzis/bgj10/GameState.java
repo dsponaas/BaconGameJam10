@@ -143,4 +143,20 @@ public class GameState {
         return start + ((end - start) * _rand.nextFloat());
     }
 
+    public float getMinGameboardX() {
+        return 0f;
+    }
+
+    public float getMinGameboardY() {
+        return Constants.TOP_OF_SCREEN_BUFFER;
+    }
+
+    public float getMaxGameboardX() {
+        return _width;
+    }
+
+    public float getMaxGameboardY() {
+        return _height;
+    }
+
 }
