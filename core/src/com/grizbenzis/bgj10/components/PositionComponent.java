@@ -7,11 +7,12 @@ import com.badlogic.ashley.core.Component;
  */
 public class PositionComponent extends Component {
 
-    public float x, y;
+    public float x, y, rotation;
 
     public PositionComponent(float xInit, float yInit) {
         x= xInit;
         y = yInit;
+        rotation = 0f;
     }
 
 }

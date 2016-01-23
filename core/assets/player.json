@@ -10,8 +10,8 @@
       description: none,
       isSensor: false,
       type: RectangleShape,
-      width: 10,
-      height: 40,
+      width: 5,
+      height: 20,
       x: 0,
       y: 0
     }

@@ -30,16 +30,18 @@ public class PositionSystem extends IteratingSystem {
         float spriteHeight;
         float spriteWidth;
 
-        spriteComponent.sprite.setX(positionComponent.x);
-        spriteComponent.sprite.setY(positionComponent.y);
-
         spriteWidth = spriteComponent.sprite.getWidth();
         spriteHeight = spriteComponent.sprite.getHeight();
 
         if (bodyComponent != null) {
             positionComponent.x = (bodyComponent.body.getPosition().x * Constants.METERS_TO_PIXELS) - (spriteWidth / 2);
             positionComponent.y = (bodyComponent.body.getPosition().y * Constants.METERS_TO_PIXELS) - (spriteHeight / 2);
+            positionComponent.rotation = bodyComponent.body.getAngle();
         }
+
+        spriteComponent.sprite.setX(positionComponent.x);
+        spriteComponent.sprite.setY(positionComponent.y);
+        spriteComponent.sprite.setRotation((float)Math.toDegrees(positionComponent.rotation));
     }
 
 }

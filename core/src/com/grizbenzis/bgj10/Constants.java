@@ -4,6 +4,7 @@ package com.grizbenzis.bgj10;
  * Created by sponaas on 1/22/16.
  */
 public class Constants {
+    public static final float TWO_PI = 2f * (float)Math.PI;
     public static final float PIXELS_TO_METERS = 0.01f;
     public static final float METERS_TO_PIXELS = 100f;
 
@@ -21,6 +22,7 @@ public class Constants {
     public static final short BITMASK_PLAYER_BULLET = 0x0008;
     public static final short BITMASK_POWERUP = 0x0010;
 
+    public static final float PLAYER_ROTATION_SPEED = 0.1f;
     public static final float BULLET_SPEED = .04f;
     public static final float PLAYER_SHOOTING_COOLDOWN = 40f;
     public static final float PLAYER_DEATH_TIME = 180f;

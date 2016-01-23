@@ -8,66 +8,27 @@ import com.badlogic.gdx.InputProcessor;
  */
 public class InputManager implements InputProcessor {
 
-    public static boolean moveUpActive = false;
-    public static boolean moveDownActive = false;
-    public static boolean moveLeftActive = false;
-    public static boolean moveRightActive = false;
+    public static boolean shootingActive = false;
+    public static boolean rotateLeftActive = false;
+    public static boolean rotateRightActive = false;
 
-    public static boolean shootingUpActive = false;
-    public static boolean shootingDownActive = false;
-    public static boolean shootingLeftActive = false;
-    public static boolean shootingRightActive = false;
-
-    private static final int MOVE_UP_KEY = Input.Keys.W;
-    private static final int MOVE_DOWN_KEY = Input.Keys.S;
-    private static final int MOVE_LEFT_KEY = Input.Keys.A;
-    private static final int MOVE_RIGHT_KEY = Input.Keys.D;
-
-    private static final int SHOOTING_UP_KEY = Input.Keys.UP;
-    private static final int SHOOTING_DOWN_KEY = Input.Keys.DOWN;
-    private static final int SHOOTING_LEFT_KEY = Input.Keys.LEFT;
-    private static final int SHOOTING_RIGHT_KEY = Input.Keys.RIGHT;
+    private static final int SHOOTING_KEY = Input.Keys.SPACE;
+    private static final int ROTATE_LEFT_KEY = Input.Keys.LEFT;
+    private static final int ROTATE_RIGHT_KEY = Input.Keys.RIGHT;
 
     @Override
     public boolean keyDown(int keycode)
     {
         switch (keycode)
         {
-            case MOVE_UP_KEY:
-                moveUpActive = true;
+            case SHOOTING_KEY:
+                shootingActive = true;
                 break;
-            case MOVE_DOWN_KEY:
-                moveDownActive = true;
+            case ROTATE_LEFT_KEY:
+                rotateLeftActive = true;
                 break;
-            case MOVE_LEFT_KEY:
-                moveLeftActive = true;
-                break;
-            case MOVE_RIGHT_KEY:
-                moveRightActive = true;
-                break;
-            case SHOOTING_UP_KEY:
-                shootingUpActive = true;
-                shootingDownActive = false;
-                shootingLeftActive = false;
-                shootingRightActive = false;
-                break;
-            case SHOOTING_DOWN_KEY:
-                shootingDownActive = true;
-                shootingUpActive = false;
-                shootingLeftActive = false;
-                shootingRightActive = false;
-                break;
-            case SHOOTING_LEFT_KEY:
-                shootingLeftActive = true;
-                shootingUpActive = false;
-                shootingDownActive = false;
-                shootingRightActive = false;
-                break;
-            case SHOOTING_RIGHT_KEY:
-                shootingRightActive = true;
-                shootingUpActive = false;
-                shootingDownActive = false;
-                shootingLeftActive = false;
+            case ROTATE_RIGHT_KEY:
+                rotateRightActive = true;
                 break;
         }
         return true;
@@ -78,29 +39,14 @@ public class InputManager implements InputProcessor {
     {
         switch (keycode)
         {
-            case MOVE_UP_KEY:
-                moveUpActive = false;
+            case SHOOTING_KEY:
+                shootingActive = false;
                 break;
-            case MOVE_DOWN_KEY:
-                moveDownActive = false;
+            case ROTATE_LEFT_KEY:
+                rotateLeftActive = false;
                 break;
-            case MOVE_LEFT_KEY:
-                moveLeftActive = false;
-                break;
-            case MOVE_RIGHT_KEY:
-                moveRightActive = false;
-                break;
-            case SHOOTING_UP_KEY:
-                shootingUpActive = false;
-                break;
-            case SHOOTING_DOWN_KEY:
-                shootingDownActive = false;
-                break;
-            case SHOOTING_LEFT_KEY:
-                shootingLeftActive = false;
-                break;
-            case SHOOTING_RIGHT_KEY:
-                shootingRightActive = false;
+            case ROTATE_RIGHT_KEY:
+                rotateRightActive = false;
                 break;
         }
         return true;
