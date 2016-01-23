@@ -13,8 +13,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 import com.grizbenzis.bgj10.*;
 import com.grizbenzis.bgj10.actors.Player;
 import com.grizbenzis.bgj10.components.PlayerDataComponent;
@@ -122,6 +121,15 @@ public class GameScreen implements Screen {
         EntityManager.getInstance().addEntity(player.getEntity());
         EntityManager.getInstance().addActor(player);
         GameState.getInstance().setPlayer(player);
+
+        // side bounds
+        addLevelBounds(0f, 0f, 0f, height * Constants.PIXELS_TO_METERS);
+        addLevelBounds(width * Constants.PIXELS_TO_METERS, 0f, width * Constants.PIXELS_TO_METERS, height * Constants.PIXELS_TO_METERS);
+
+        // vert bounds
+        addLevelBounds(0f, 0f, width * Constants.PIXELS_TO_METERS, 0f);
+        addLevelBounds(0f, (height * Constants.PIXELS_TO_METERS) - (Constants.TOP_OF_SCREEN_BUFFER * Constants.PIXELS_TO_METERS),
+                width * Constants.PIXELS_TO_METERS, (height * Constants.PIXELS_TO_METERS) - (Constants.TOP_OF_SCREEN_BUFFER * Constants.PIXELS_TO_METERS));
     }
 
     @Override
@@ -141,7 +149,10 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        _world.dispose();
+        _spriteBatch.dispose();
+        _hudBatch.dispose();
+        _shapeRenderer.dispose();
     }
 
     public Engine initializeEngine() {
@@ -235,5 +246,24 @@ public class GameScreen implements Screen {
             _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, SHOT_CHARGE_HACK * width - (2f * buffer), (height - (2f * buffer)));
             _shapeRenderer.end();
         }
+    }
+
+    private void addLevelBounds(float x1, float y1, float x2, float y2) {
+        BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.StaticBody;
+        bodyDef.position.set(0f, 0f);
+
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.filter.categoryBits = Constants.BITMASK_LEVEL_BOUNDS;
+        fixtureDef.filter.maskBits = Constants.BITMASK_PLAYER_BULLET;
+
+        EdgeShape shape = new EdgeShape();
+        shape.set(x1, y1, x2, y2);
+        fixtureDef.shape = shape;
+        fixtureDef.friction = 0f;
+
+        Body body = _world.createBody(bodyDef);
+        body.createFixture(fixtureDef);
+        shape.dispose();
     }
 }
