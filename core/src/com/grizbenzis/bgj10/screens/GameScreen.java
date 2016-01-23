@@ -99,15 +99,16 @@ public class GameScreen implements Screen {
         renderActivePowerups();
         _spriteBatch.end();
 
-        renderHud();
-
         _shapeRenderer.setProjectionMatrix(_camera.combined);
         renderShotCharges();
+        clearHudBar();
         _shapeRenderer.end();
+
+        renderHud();
 
         EntityManager.getInstance().update();
 
-        _debugRenderer.render(_world, debugMatrix);
+//        _debugRenderer.render(_world, debugMatrix);
     }
 
     @Override
@@ -246,6 +247,13 @@ public class GameScreen implements Screen {
             _shapeRenderer.rect(pos.x - (width / 2f) + buffer, pos.y + buffer, SHOT_CHARGE_HACK * width - (2f * buffer), (height - (2f * buffer)));
             _shapeRenderer.end();
         }
+    }
+
+    private void clearHudBar() {
+        _shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        _shapeRenderer.setColor(new Color(0f, 0f, 0f, 0f));
+        _shapeRenderer.rect(0f, _screenHeight - Constants.TOP_OF_SCREEN_BUFFER, _screenWidth, _screenHeight);
+        _shapeRenderer.end();
     }
 
     private void addLevelBounds(float x1, float y1, float x2, float y2) {
