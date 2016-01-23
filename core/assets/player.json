@@ -10,11 +10,21 @@
       description: none,
       isSensor: false,
       type: RectangleShape,
-      width: 28,
+      width: 14,
       height: 50,
       restitution: 0,
-      x: 0,
+      x: 14,
       y: 0
+    },
+    {
+      description: none,
+      isSensor: false,
+      type: RectangleShape,
+      width: 18,
+      height: 12,
+      restitution: 0,
+      x: -10,
+      y: 8
     }
   ]
 }
