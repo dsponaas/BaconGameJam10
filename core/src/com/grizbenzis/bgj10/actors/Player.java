@@ -16,8 +16,6 @@ import com.grizbenzis.bgj10.screens.GameOverScreen;
  */
 public class Player extends Actor {
 
-    private float _shotTimer;
-
     private Constants.WeaponState _weaponState;
     private float _weaponTimer;
 
@@ -139,7 +137,7 @@ public class Player extends Actor {
 
     private void fire() {
         PositionComponent positionComponent = getPosition();
-        Vector2 pos = new Vector2(positionComponent.x + (getSizeXInPixels() / 2), positionComponent.y + (getSizeYInPixels() / 2));
+        Vector2 pos = getCenterPos();
         float rotation = positionComponent.rotation;
 
         rotation += Constants.ONE_AND_A_HALF_PI;
@@ -153,7 +151,7 @@ public class Player extends Actor {
         if(_weaponTimer < 0f) {
             _weaponTimer = 0f;
         }
-        float weaponCharge = (Constants.SHOOTING_CHARGE_TIME - _weaponTimer) / Constants.SHOOTING_CHARGE_TIME;
+        float weaponCharge = getWeaponCharge();
         float power = Constants.SHOOTING_MIN_POWER_FACTOR + ((Constants.SHOOTING_MAX_POWER_FACTOR - Constants.SHOOTING_MIN_POWER_FACTOR) * weaponCharge);
 
         shoot(pos.x, pos.y, rotation, power);
@@ -197,6 +195,19 @@ public class Player extends Actor {
         EntityManager.getInstance().addEntity(player.getEntity());
         EntityManager.getInstance().addActor(player);
         GameState.getInstance().setPlayer(player);
+    }
+
+    public Vector2 getCenterPos() {
+        PositionComponent positionComponent = getPosition();
+        return new Vector2(positionComponent.x + (getSizeXInPixels() / 2), positionComponent.y + (getSizeYInPixels() / 2));
+    }
+
+    public Constants.WeaponState getWeaponState() {
+        return _weaponState;
+    }
+
+    public float getWeaponCharge() {
+        return (Constants.SHOOTING_CHARGE_TIME - _weaponTimer) / Constants.SHOOTING_CHARGE_TIME;
     }
 
 }
