@@ -2,16 +2,16 @@
   BodyDef : {
     type: DynamicBody,
     collisionType: PLAYER,
-    dimensionX: 28,
-    dimensionY: 50
+    dimensionX: 56,
+    dimensionY: 100
   },
   Fixtures : [
     {
       description: none,
       isSensor: false,
       type: RectangleShape,
-      width: 14,
-      height: 25,
+      width: 28,
+      height: 50,
       x: 0,
       y: 0
     }
