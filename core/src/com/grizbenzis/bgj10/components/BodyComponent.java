@@ -13,7 +13,7 @@ public class BodyComponent extends Component {
 
     public BodyComponent(PositionComponent positionComponent, Body bodyInit) {
         body = bodyInit;
-        body.setTransform( positionComponent.x * Constants.PIXELS_TO_METERS, positionComponent.y * Constants.PIXELS_TO_METERS, 0);
+        body.setTransform( positionComponent.x * Constants.PIXELS_TO_METERS, positionComponent.y * Constants.PIXELS_TO_METERS, positionComponent.rotation);
     }
 
 }

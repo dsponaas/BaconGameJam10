@@ -36,8 +36,12 @@ public class Player extends Actor {
         Body body = BodyFactory.getInstance().generate(entity, "player.json", position);
 
         PositionComponent playerPositionComponent = new PositionComponent(position.x, position.y);
+        playerPositionComponent.rotation = (float)Math.PI / -2f ;
+
         BodyComponent playerBodyComponent = new BodyComponent(playerPositionComponent, body);
+
         RenderComponent renderComponent = new RenderComponent(100);
+
         PlayerDataComponent playerDataComponent = new PlayerDataComponent();
 
         entity.add(playerPositionComponent).add(playerBodyComponent).add(spriteComponent).add(renderComponent).add(playerDataComponent);

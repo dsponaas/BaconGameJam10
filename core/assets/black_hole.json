@@ -1,0 +1,23 @@
+{
+  BodyDef : {
+    fixedRotation: true,
+    type: StaticBody,
+    gravityScale: 0,
+    collisionType: BLACK_HOLE,
+    dimensionX: 40,
+    dimensionY: 40
+  },
+  Fixtures : [
+    {
+      description: none,
+      isSensor: true,
+      type: CircleShape,
+      radius: 20,
+      density: 0,
+      friction: 0,
+      restitution: 0,
+      x: 0,
+      y: 0
+    }
+  ]
+}
