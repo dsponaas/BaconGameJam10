@@ -18,7 +18,7 @@ public class Constants {
 
     public static final float BASE_SPAWN_TIMER = 600f;
     public static final float TIME_PER_LEVEL = 600f;
-    public static final int INITIAL_LIVES_COUNT = 10;
+    public static final int INITIAL_LIVES_COUNT = 2;
 
     public static final short BITMASK_PLAYER = 0x0001;
     public static final short BITMASK_ENEMY = 0x0002;
@@ -58,9 +58,9 @@ public class Constants {
     public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 500f;
     public static final int BLACK_HOLE_MIN_LEVEL = 4;
     public static final float BLACK_HOLE_POS_BUFFER = 200f;
-    public static final float BLACK_HOLE_MAX_GRAV_DIST_SQUARED = 90000f; // dist = 300
+    public static final float BLACK_HOLE_MAX_GRAV_DIST_SQUARED = 120000f;
     public static final float BLACK_HOLE_LIFE_TIME = 180f;
-    public static final float BLACK_HOLE_MAX_GRAV = 0.3f;
+    public static final float BLACK_HOLE_MAX_GRAV = 0.2f;
 
     public static final float PLAYER_SHOOTING_VOLUME = 0.2f;
     public static final float EXPLOSION_VOLUME = 0.6f;
