@@ -24,10 +24,10 @@ public class Constants {
     public static final short BITMASK_PLAYER_BULLET = 0x0008;
     public static final short BITMASK_POWERUP = 0x0010;
 
-    public static final float PLAYER_ROTATION_SPEED = 0.08f;
+    public static final float PLAYER_ROTATION_SPEED = 0.03f;
     public static final float BULLET_SPEED = .1f;
-    public static final float SHOOTING_COOLDOWN = 8f;
-    public static final float SHOOTING_CHARGE_TIME = 10f;
+    public static final float SHOOTING_COOLDOWN = 12f;
+    public static final float SHOOTING_CHARGE_TIME = 12f;
     public static final float PLAYER_DEATH_TIME = 180f;
     public static final float PLAYER_INVINCIBILITY_TIME = 180f;
     public static final float SPREAD_SHOT_ANGLE = (float)Math.PI * 0.1f;
