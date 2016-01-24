@@ -80,29 +80,11 @@ public class ContactManager implements ContactListener {
                 killPlayer(entityB, bodyB, fixtureB, playerDataComponent);
         }
 
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER == fixtureBType)) {
+        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER == fixtureBType || Constants.BITMASK_EXPLOSION == fixtureBType || Constants.BITMASK_PLAYER_BULLET == fixtureBType)) {
             PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER == fixtureAType)) {
-            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_EXPLOSION == fixtureBType)) {
-            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_EXPLOSION == fixtureAType)) {
-            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER_BULLET == fixtureBType)) {
-            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER_BULLET == fixtureAType)) {
+        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER == fixtureAType || Constants.BITMASK_PLAYER_BULLET == fixtureAType || Constants.BITMASK_PLAYER_BULLET == fixtureAType)) {
             PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }
