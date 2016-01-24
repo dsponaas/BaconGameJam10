@@ -119,7 +119,7 @@ public class BodyFactory {
             FixtureDef fixtureDef = new FixtureDef();
             fixtureDef.shape = shape;
             fixtureDef.isSensor = jsonFixture.getBoolean("isSensor");
-            fixtureDef.density = 1f;
+            fixtureDef.density = jsonFixture.getFloat("density");
             fixtureDef.friction = 0f;
             if(jsonFixture.has("restitution"))
                 fixtureDef.restitution = jsonFixture.getFloat("restitution");

@@ -13,8 +13,8 @@
       isSensor: false,
       type: CircleShape,
       radius: 40,
-      density: 150,
-      friction: 1,
+      density: 3,
+      friction: 0.1,
       restitution: 1,
       x: 0,
       y: 0
