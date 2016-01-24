@@ -125,7 +125,7 @@ public class GameState {
             _blackHoleTimer -= Time.time;
             if(_blackHoleTimer < 0f) {
                 _blackHoleTimer = getBlackholeTimer();
-                spawnBlackHole();
+//                spawnBlackHole();
             }
         }
     }
