@@ -52,6 +52,7 @@ public class ResourceManager {
         _textures.put("background_middle", new Texture("background_middle.png"));
         _textures.put("background_front", new Texture("background_front.png"));
         _textures.put("blood1", new Texture("blood1.png"));
+        _textures.put("black_hole", new Texture("black_hole.png"));
 
         _gameMusic = Gdx.audio.newMusic(Gdx.files.internal("test4_looping.ogg"));
         _gameMusic.setLooping( true );
