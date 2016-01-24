@@ -4,15 +4,12 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.grizbenzis.bgj10.Constants;
 import com.grizbenzis.bgj10.EntityManager;
 import com.grizbenzis.bgj10.Time;
 import com.grizbenzis.bgj10.components.*;
 import com.grizbenzis.bgj10.screens.GameScreen;
-import com.sun.tools.internal.jxc.ap.Const;
 
 /**
  * Created by sponaas on 1/24/16.
