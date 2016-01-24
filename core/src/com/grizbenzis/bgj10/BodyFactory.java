@@ -51,8 +51,10 @@ public class BodyFactory {
             categoryBits = Constants.BITMASK_EXPLOSION;
         else if(collisionType.equalsIgnoreCase("BLACK_HOLE"))
             categoryBits = Constants.BITMASK_BLACK_HOLE;
-        else if(collisionType.equalsIgnoreCase("ALIEN"))
+        else if(collisionType.equalsIgnoreCase("ALIEN")) {
             categoryBits = Constants.BITMASK_ALIEN;
+            bodyDef.fixedRotation = true; // ************************* HACK *************************
+        }
         else
             Gdx.app.log("WARNING", "Entity Box2D collision type undefined - " + collisionType);
 
