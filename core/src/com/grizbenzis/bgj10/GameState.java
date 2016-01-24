@@ -19,14 +19,22 @@ public class GameState {
 
     private float _width, _height;
     private float _enemySpawnTimer;
+    private float _alienSpawnTimer;
     private float _powerupSpawnTimer;
     private Random _rand;
     private int _enemyCount;
+    private int _alienCount;
     public void addEnemy() {
         ++_enemyCount;
     }
     public void removeEnemy() {
         --_enemyCount;
+    }
+    public void addAlien() {
+        ++_alienCount;
+    }
+    public void removeAlien() {
+        --_alienCount;
     }
 
     private float _levelTimer;
@@ -70,6 +78,9 @@ public class GameState {
 
         _enemySpawnTimer = 0f;
         _enemyCount = 0;
+
+        _alienSpawnTimer = 0f;
+        _alienCount = 0;
     }
 
     public static void initialize(float width, float height) {
@@ -86,6 +97,7 @@ public class GameState {
 
         if(playerData.alive && (playerData.invincibilityTime <= 0f)) {
             _enemySpawnTimer -= (float) Time.time;
+            _alienSpawnTimer -= (float) Time.time;
             _levelTimer -= (float) Time.time;
             _powerupSpawnTimer -= (float) Time.time;
         }
@@ -93,6 +105,10 @@ public class GameState {
         if((_enemySpawnTimer < 0f) && (_enemyCount < getMaxEnemies())) {
             _enemySpawnTimer = getSpawnTimer();
             spawnLargeAsteroid();
+        }
+        if (_alienSpawnTimer < 0f && _alienCount < getMaxAliens()) {
+            _alienSpawnTimer = getSpawnTimer();
+            spawnAlien();
         }
         if(_levelTimer < 0f) {
             ++_level;
@@ -262,7 +278,7 @@ public class GameState {
         RenderComponent renderComponent = new RenderComponent(0);
 
         Vector2 impulse = posAndVel[1].scl(Constants.ALIEN_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
-        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, impulse.x > 0 ? 0 : _width, posAndVel[0].y, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
@@ -297,15 +313,15 @@ public class GameState {
         float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
         Vector2 startPos = null;
         Vector2 startVel = null;
-        switch(getRandomInt(0, 3)) {
+        switch(getRandomInt(0, 4)) {
             case 0: { // TOP
                 startPos = new Vector2(getRandomFloat(0f, _width), _height);
-                startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f));
+                startVel = new Vector2(minorVelComponent, getRandomFloat(-0.5f, -1f));
                 break;
             }
             case 1: { // RIGHT
                 startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(-0.5f, -1f), minorVelComponent);
                 break;
             }
             case 2: { // BOTTOM
@@ -315,7 +331,7 @@ public class GameState {
             }
             case 3: { // LEFT
                 startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(0.5f, 1f), minorVelComponent);
                 break;
             }
         }
@@ -326,18 +342,17 @@ public class GameState {
 
     private Vector2[] initAlienPosAndVel() {
         Vector2[] retval = new Vector2[2];
-        float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
         Vector2 startPos = null;
         Vector2 startVel = null;
-        switch(getRandomInt(0, 1)) {
+        switch(getRandomInt(0, 2)) {
             case 0: { // RIGHT
                 startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(-0.5f, -1f), 0);
                 break;
             }
             case 1: { // LEFT
                 startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
-                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+                startVel = new Vector2(getRandomFloat(0.5f, 1f), 0);
                 break;
             }
         }
@@ -359,6 +374,10 @@ public class GameState {
 //            case 8: return 12;
 //            case 9: return 13;
 //        }
+    }
+
+    public int getMaxAliens() {
+        return (int)(((float)_level * .75f));
     }
 
 }

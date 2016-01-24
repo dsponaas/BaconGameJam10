@@ -44,14 +44,36 @@ public class EntityManager {
     }
 
     public void addEntity(Entity entity) {
-        if(_enemyDataComponents.has(entity))
-            GameState.getInstance().addEnemy();
+        if(_enemyDataComponents.has(entity)) {
+            EnemyDataComponent enemyDataComponent = _enemyDataComponents.get(entity);
+            switch (enemyDataComponent.type){
+                case ASTEROID_LARGE:
+                case ASTEROID_MEDIUM:
+                case ASTEROID_SMALL:
+                    GameState.getInstance().addEnemy();
+                    break;
+                case ALIEN:
+                    GameState.getInstance().addAlien();
+                    break;
+            }
+        }
         _engine.addEntity(entity);
     }
 
     public void destroyEntity(Entity entity) {
-        if(_enemyDataComponents.has(entity))
-            GameState.getInstance().removeEnemy();
+        if(_enemyDataComponents.has(entity)) {
+            EnemyDataComponent enemyDataComponent = _enemyDataComponents.get(entity);
+            switch (enemyDataComponent.type){
+                case ASTEROID_LARGE:
+                case ASTEROID_MEDIUM:
+                case ASTEROID_SMALL:
+                    GameState.getInstance().removeEnemy();
+                    break;
+                case ALIEN:
+                    GameState.getInstance().removeAlien();
+                    break;
+            }
+        }
         _toDestroy.add(entity);
     }
 
