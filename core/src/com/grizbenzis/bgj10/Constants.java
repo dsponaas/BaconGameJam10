@@ -37,6 +37,9 @@ public class Constants {
     public static final float SHOOTING_MAX_POWER_FACTOR = 1.5f;
     public static final float SHIP_ACCEL_FACTOR = 0.8f;
 
+    public static final float BLOOD_FADE_TIME = 20f;
+    public static final float BLEED_INTERVAL = 5f;
+
     public static final float ALIEN_SPAWN_SPEED_FACTOR = 0.7f;
 
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;

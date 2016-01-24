@@ -36,8 +36,6 @@ public class GameScreen implements Screen {
     private SpriteBatch _hudBatch;
     private ShapeRenderer _shapeRenderer;
 
-    private Sprite _backgroundSprite;
-
     private InputManager _inputManager;
 
     private Box2DDebugRenderer _debugRenderer;
@@ -93,7 +91,6 @@ public class GameScreen implements Screen {
         GameState.getInstance().update();
 
         _spriteBatch.begin();
-//        _backgroundSprite.draw(_spriteBatch);
         _engine.update((float) Time.time);
         _spriteBatch.setProjectionMatrix(_camera.combined);
         renderActivePowerups();
@@ -161,15 +158,17 @@ public class GameScreen implements Screen {
         ParallaxBackgroundRenderingSystem parallaxSystem = new ParallaxBackgroundRenderingSystem(_spriteBatch, 0);
         PositionSystem positionSystem = new PositionSystem(1);
         RenderSpriteSystem renderSpriteSystem = new RenderSpriteSystem(_spriteBatch, 2);
-        PlayerDataSystem playerDataSystem = new PlayerDataSystem(3);
-        PowerupSystem powerupSystem = new PowerupSystem(4);
-        EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(5);
-        BulletSystem bulletSystem = new BulletSystem(6);
-        ExplosionSystem explosionSystem = new ExplosionSystem(7);
+        BloodSystem bloodSystem = new BloodSystem(_spriteBatch, 3);
+        PlayerDataSystem playerDataSystem = new PlayerDataSystem(4);
+        PowerupSystem powerupSystem = new PowerupSystem(5);
+        EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(6);
+        BulletSystem bulletSystem = new BulletSystem(7);
+        ExplosionSystem explosionSystem = new ExplosionSystem(8);
 
         engine.addSystem(parallaxSystem);
         engine.addSystem(positionSystem);
         engine.addSystem(renderSpriteSystem);
+        engine.addSystem(bloodSystem);
         engine.addSystem(playerDataSystem);
         engine.addSystem(powerupSystem);
         engine.addSystem(enemyDeathSystem);

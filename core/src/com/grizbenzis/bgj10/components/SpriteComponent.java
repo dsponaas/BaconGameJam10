@@ -9,7 +9,12 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 public class SpriteComponent extends Component {
 
     public Sprite sprite;
+    public float spriteWidth, spriteHeight;
 
-    public SpriteComponent(Sprite spriteInit) { sprite = spriteInit; }
+    public SpriteComponent(Sprite spriteInit) {
+        sprite = spriteInit;
+        spriteWidth = sprite.getWidth();
+        spriteHeight = sprite.getHeight();
+    }
 
 }
