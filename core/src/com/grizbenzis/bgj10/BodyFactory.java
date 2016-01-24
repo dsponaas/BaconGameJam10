@@ -32,7 +32,7 @@ public class BodyFactory {
         JsonValue jsonBody = jsonRoot.get("BodyDef");
         BodyDef bodyDef = new BodyDef();
 
-        bodyDef.fixedRotation = true;
+        bodyDef.fixedRotation = false;
         bodyDef.gravityScale = 0f;
         float dimensionX = jsonBody.getFloat("dimensionX");
         float dimensionY = jsonBody.getFloat("dimensionY");
@@ -119,7 +119,7 @@ public class BodyFactory {
             FixtureDef fixtureDef = new FixtureDef();
             fixtureDef.shape = shape;
             fixtureDef.isSensor = jsonFixture.getBoolean("isSensor");
-            fixtureDef.density = 1f;
+            fixtureDef.density = jsonFixture.getFloat("density");
             fixtureDef.friction = 0f;
             if(jsonFixture.has("restitution"))
                 fixtureDef.restitution = jsonFixture.getFloat("restitution");

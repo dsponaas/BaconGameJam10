@@ -11,6 +11,7 @@
       isSensor: true,
       type: CircleShape,
       radius: 10,
+      density: 1,
       x: 0,
       y: 0
     }

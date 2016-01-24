@@ -96,20 +96,25 @@ public class Player extends Actor {
             rotationInput -= 1f;
         }
 
-        float rotationAdjustment = rotationInput * Constants.PLAYER_ROTATION_SPEED * (float) Time.time;
+        float rotationSpeed = rotationInput * Constants.PLAYER_ROTATION_SPEED * (float) Time.time;
 
         Body body = getBody();
-        float rotation = body.getAngle();
+        float angularVelocity = body.getAngularVelocity();
+        float angularVelocityDelta = rotationSpeed - angularVelocity;
 
-        rotation += rotationAdjustment;
-        if(rotation >= Constants.TWO_PI) {
-            rotation -= Constants.TWO_PI;
-        }
-        else if(rotation <= 0f) {
-            rotation += Constants.TWO_PI;
-        }
+        body.applyTorque(angularVelocityDelta, true);
 
-        body.setTransform(body.getPosition(), rotation);
+//        float rotation = body.getAngle();
+//
+//        rotation += rotationAdjustment;
+//        if(rotation >= Constants.TWO_PI) {
+//            rotation -= Constants.TWO_PI;
+//        }
+//        else if(rotation <= 0f) {
+//            rotation += Constants.TWO_PI;
+//        }
+//
+//        body.setTransform(body.getPosition(), rotation);
     }
 
     private void updateShooting() {
