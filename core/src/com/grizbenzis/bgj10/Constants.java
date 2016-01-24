@@ -16,7 +16,7 @@ public class Constants {
 
     public static final float BODY_MAX_SPEED = 5f;
 
-    public static final float BASE_SPAWN_TIMER = 600f;
+    public static final float BASE_SPAWN_TIMER = 400f;
     public static final float TIME_PER_LEVEL = 600f;
     public static final int INITIAL_LIVES_COUNT = 2;
 
