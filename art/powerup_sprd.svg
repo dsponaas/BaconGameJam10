@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.2"
-     inkscape:cx="-10.756953"
+     inkscape:cx="3.6626896"
      inkscape:cy="17.119269"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -58,15 +58,14 @@
      id="layer1"
      transform="translate(0,-1032.3622)">
     <ellipse
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-opacity:1"
+       style="fill:#ff1045;fill-opacity:1;stroke:none;stroke-opacity:1"
        id="path6943"
        cx="9.8660707"
        cy="1042.5408"
        rx="10.01514"
        ry="10.072564"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       inkscape:export-filename="/Users/sponaas/workspace/sht-jam-2015/desktop/assets/powerup_sprd.png" />
+       inkscape:export-ydpi="90" />
     <ellipse
        style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1"
        id="path6943-8"
@@ -78,15 +77,15 @@
        inkscape:export-ydpi="90" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.39982986px;line-height:125%;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="3.3395705"
-       y="805.58173"
-       id="text4246"
+       style="font-style:normal;font-weight:normal;font-size:7.52665567px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3.1189845"
+       y="775.54858"
+       id="text8801"
        sodipodi:linespacing="125%"
-       transform="scale(0.77034021,1.2981277)"><tspan
+       transform="scale(0.74128106,1.349016)"><tspan
          sodipodi:role="line"
-         id="tspan4248"
-         x="3.3395705"
-         y="805.58173">SPRD</tspan></text>
+         id="tspan8803"
+         x="3.1189845"
+         y="775.54858">SPRD</tspan></text>
   </g>
 </svg>

@@ -11,16 +11,16 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1024"
    height="768"
-   viewBox="0 0 1024 768.00001"
-   id="svg3403"
+   viewBox="0 0 1024 768"
+   id="svg9404"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="splashscreen.svg"
    inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam10/core/assets/splashscreen.png"
    inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-ydpi="90"
+   sodipodi:docname="splashscreen.svg">
   <defs
-     id="defs3405" />
+     id="defs9406" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -28,21 +28,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="354.22294"
-     inkscape:cy="347.12662"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="615.85547"
+     inkscape:cy="133.30844"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     borderlayer="true"
      inkscape:window-width="1440"
      inkscape:window-height="775"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     borderlayer="true" />
   <metadata
-     id="metadata3408">
+     id="metadata9409">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -59,35 +59,484 @@
      id="layer1"
      transform="translate(0,-284.36216)">
     <rect
-       style="fill:#000000"
-       id="rect3411"
-       width="1265.7142"
-       height="891.42859"
-       x="-62.857143"
-       y="243.79073" />
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="rect9975"
+       width="1117.2288"
+       height="826.30481"
+       x="-61.467018"
+       y="256.12735" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:95.84397888px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="178.10181"
-       y="404.95599"
-       id="text3413"
-       sodipodi:linespacing="125%"
-       transform="scale(0.55653892,1.7968195)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="171.42857"
+       y="539.505"
+       id="text10070"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3415"
-         x="178.10181"
-         y="404.95599">SPLASH SCREEN PLACEHOLDER</tspan></text>
+         id="tspan10072"
+         x="171.42857"
+         y="539.505" /></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:107.79794312px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="247.08565"
-       y="621.97101"
-       id="text3500"
-       sodipodi:linespacing="125%"
-       transform="scale(0.69328467,1.4424089)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black,  Heavy';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="157.14285"
+       y="529.505"
+       id="text10090"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3502"
-         x="247.08565"
-         y="621.97101">(PRESS ANY KEY)</tspan></text>
+         id="tspan10092"
+         x="157.14285"
+         y="529.505" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Heavy';letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="165.71429"
+       y="545.2193"
+       id="text10094"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10096"
+         x="165.71429"
+         y="545.2193" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:68.89788055px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="63.053082"
+       y="354.88977"
+       id="text10422"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10424"
+         x="63.053082"
+         y="354.88977">Super Matt Damon Space</tspan></text>
+    <g
+       id="g3669"
+       transform="translate(-10.101524,120.20816)">
+      <g
+         transform="matrix(0.77034306,0,0,0.77034306,318.18967,182.61944)"
+         id="g10042">
+        <rect
+           style="fill:#ffffff;fill-opacity:0.76404497;stroke:none;stroke-opacity:1"
+           id="rect9979"
+           width="79.789734"
+           height="49.203671"
+           x="-180.88908"
+           y="595.52606"
+           rx="10.531708"
+           ry="10.531708" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:32.8125267px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-206.22917"
+           y="540.22369"
+           id="text9981"
+           sodipodi:linespacing="125%"
+           transform="scale(0.8519315,1.1738033)"><tspan
+             sodipodi:role="line"
+             id="tspan9983"
+             x="-206.22917"
+             y="540.22369">LEFT</tspan></text>
+      </g>
+      <g
+         transform="matrix(0.77034306,0,0,0.77034306,318.42708,178.34705)"
+         id="g10047">
+        <rect
+           style="fill:#ffffff;fill-opacity:0.76404497;stroke:none;stroke-opacity:1"
+           id="rect9979-6"
+           width="79.789734"
+           height="49.203671"
+           x="-181.31621"
+           y="660.06482"
+           rx="10.531708"
+           ry="10.531708" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:29.35677338px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-247.65538"
+           y="492.27209"
+           id="text10030"
+           sodipodi:linespacing="125%"
+           transform="scale(0.70380817,1.4208417)"><tspan
+             sodipodi:role="line"
+             id="tspan10032"
+             x="-247.65538"
+             y="492.27209">RIGHT</tspan></text>
+      </g>
+      <g
+         transform="matrix(0.77034306,0,0,0.77034306,316.2261,184.32154)"
+         id="g10052">
+        <rect
+           style="fill:#ffffff;fill-opacity:0.76404497;stroke:none;stroke-opacity:1"
+           id="rect9979-68"
+           width="79.789734"
+           height="49.203671"
+           x="-178.28577"
+           y="712.59271"
+           rx="10.531708"
+           ry="10.531708" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:29.25243568px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-246.70947"
+           y="519.91547"
+           id="text10034"
+           sodipodi:linespacing="125%"
+           transform="scale(0.69099487,1.4471888)"><tspan
+             sodipodi:role="line"
+             id="tspan10036"
+             x="-246.70947"
+             y="519.91547">SPACE</tspan></text>
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text10106"
+         y="667.52441"
+         x="254.14003"
+         style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="667.52441"
+           x="254.14003"
+           id="tspan10108"
+           sodipodi:role="line">Rotate Left</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text10110"
+         y="712.91962"
+         x="251.93907"
+         style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="712.91962"
+           x="251.93907"
+           id="tspan10112"
+           sodipodi:role="line">Rotate Right</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text10114"
+         y="759.1402"
+         x="252.4893"
+         style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="759.1402"
+           x="252.4893"
+           id="tspan10116"
+           sodipodi:role="line">Charge / Shoot Cannon</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text10126"
+         y="623.22968"
+         x="176.00523"
+         style="font-style:normal;font-weight:normal;font-size:38.51715469px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="623.22968"
+           x="176.00523"
+           id="tspan10128"
+           sodipodi:role="line">Controls</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:38.51715469px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="576.99835"
+       y="741.32629"
+       id="text10130"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10132"
+         x="576.99835"
+         y="741.32629">Powerups</tspan></text>
+    <g
+       transform="matrix(1.1892241,0,0,1.1892241,584.25935,-444.55528)"
+       id="layer1-2"
+       inkscape:label="Layer 1">
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="19.983278"
+         rx="19.970497"
+         cy="1032.3679"
+         cx="20.0016"
+         id="path6943"
+         style="fill:#ff00ff;fill-opacity:1;stroke:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="15.815591"
+         rx="15.805476"
+         cy="1032.5388"
+         cx="19.699833"
+         id="path6943-8"
+         style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1" />
+      <text
+         transform="scale(0.67612672,1.4790127)"
+         sodipodi:linespacing="125%"
+         id="text7521"
+         y="704.02032"
+         x="11.609441"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:15.84685898px;line-height:125%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black,  Heavy';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="704.02032"
+           x="11.609441"
+           id="tspan7523"
+           sodipodi:role="line">1UP</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.1889562,0,0,1.1889562,585.52351,-336.32501)"
+       id="layer1-7"
+       inkscape:label="Layer 1">
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="19.983278"
+         rx="19.970497"
+         cy="1032.63"
+         cx="19.821428"
+         id="path6943-5"
+         style="fill:#ff1045;fill-opacity:1;stroke:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="15.815591"
+         rx="15.805476"
+         cy="1032.8009"
+         cx="19.519661"
+         id="path6943-8-1"
+         style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1" />
+      <text
+         transform="scale(0.7431654,1.3455955)"
+         sodipodi:linespacing="125%"
+         id="text8801"
+         y="772.19238"
+         x="7.8403764"
+         style="font-style:normal;font-weight:normal;font-size:14.97032833px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="772.19238"
+           x="7.8403764"
+           id="tspan8803"
+           sodipodi:role="line">EXPL</tspan></text>
+    </g>
+    <g
+       transform="matrix(2.4053766,0,0,2.4053766,584.88451,-1669.8197)"
+       id="layer1-27"
+       inkscape:label="Layer 1">
+      <ellipse
+         inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam9/desktop/assets/poweruppointssmall.png"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="10.016761"
+         rx="9.8700504"
+         cy="1042.4738"
+         cx="10.006748"
+         id="path6943-4"
+         style="fill:#45e345;fill-opacity:1;stroke:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam9/desktop/assets/poweruppointssmall.png"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="7.9276776"
+         rx="7.8115659"
+         cy="1042.5593"
+         cx="9.8576059"
+         id="path6943-8-10"
+         style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam9/desktop/assets/poweruppointssmall.png"
+         transform="scale(0.91652122,1.0910822)"
+         sodipodi:linespacing="125%"
+         id="text9381"
+         y="958.50012"
+         x="4.5027647"
+         style="font-style:normal;font-weight:normal;font-size:9.43350601px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="958.50012"
+           x="4.5027647"
+           id="tspan9383"
+           sodipodi:role="line">2X</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#eeffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="652.74341"
+       y="789.88135"
+       id="text10406"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10408"
+         x="652.74341"
+         y="789.88135">Extra Life</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="652.02051"
+       y="842.83838"
+       id="text10410"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10412"
+         x="652.02051"
+         y="842.83838">Double Points</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="653.89917"
+       y="896.25128"
+       id="text10414"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10416"
+         x="653.89917"
+         y="896.25128">Larger Explosions</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:21.18443489px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="654.47705"
+       y="949.90833"
+       id="text10418"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10420"
+         x="654.47705"
+         y="949.90833">Spread Shot</tspan></text>
+    <g
+       id="g3723"
+       transform="matrix(0.80528155,0,0,0.80528155,-230.83268,229.67038)">
+      <rect
+         ry="12.325489"
+         rx="12.325489"
+         y="878.6098"
+         x="510.92856"
+         height="77.816399"
+         width="356.39911"
+         id="rect11003"
+         style="fill:#ffffff;fill-opacity:0.79213484;stroke:none;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text11025"
+         y="913.45367"
+         x="541.31281"
+         style="font-style:normal;font-weight:normal;font-size:36.67770004px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="913.45367"
+           x="541.31281"
+           id="tspan11027"
+           sodipodi:role="line">PRESS ANY KEY</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text11029"
+         y="951.17731"
+         x="599.24567"
+         style="font-style:normal;font-weight:normal;font-size:36.67770004px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="951.17731"
+           x="599.24567"
+           id="tspan11031"
+           sodipodi:role="line">TO PLAY!</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.96596146px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="373.83548"
+       y="403.86206"
+       id="text3464"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3466"
+         x="373.83548"
+         y="403.86206">Ca</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:68.89788055px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="191.54475"
+       y="422.26401"
+       id="text10422-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan10424-4"
+         x="191.54475"
+         y="422.26401">Cannon Adventure</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.24596786px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="152.74937"
+       y="502.0289"
+       id="text3486"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3488"
+         x="152.74937"
+         y="502.0289">In order to make it back from Mars, Matt Damon must utilize</tspan><tspan
+         sodipodi:role="line"
+         x="152.74937"
+         y="531.08636"
+         id="tspan3490">his knowledge of science 19th-century naval weaponry. Use</tspan><tspan
+         sodipodi:role="line"
+         x="152.74937"
+         y="560.1438"
+         id="tspan3492">your cannon to shoot, move, and block asteroids. Why was</tspan><tspan
+         sodipodi:role="line"
+         x="152.74937"
+         y="589.20129"
+         id="tspan3494">Matt Damon on Mars? Why does he have a cannon? Since</tspan><tspan
+         sodipodi:role="line"
+         x="152.74937"
+         y="618.25873"
+         id="tspan3760">when were there so many asteroids between Mars and Earth?</tspan><tspan
+         sodipodi:role="line"
+         x="152.74937"
+         y="647.31622"
+         id="tspan3498">It is what it is (ain't nothin' gotta be nothin').</tspan></text>
+    <g
+       id="g3821">
+      <rect
+         transform="matrix(0.97685065,0.21392242,-0.21392242,0.97685065,0,0)"
+         y="425.01114"
+         x="458.97507"
+         height="1.8940361"
+         width="88.388351"
+         id="rect3804"
+         style="fill:#ffffff" />
+      <rect
+         transform="matrix(-0.97685065,0.21392242,0.21392242,0.97685065,0,0)"
+         y="596.35455"
+         x="-323.14853"
+         height="1.8940361"
+         width="88.388351"
+         id="rect3804-5"
+         style="fill:#ffffff" />
+    </g>
+    <g
+       id="g3425"
+       transform="matrix(2.3577256,0,0,2.4043574,585.37123,-1562.2402)">
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="10.072564"
+         rx="10.01514"
+         cy="1042.5408"
+         cx="9.8660707"
+         id="path6943-3"
+         style="fill:#ff1045;fill-opacity:1;stroke:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         ry="7.9718428"
+         rx="7.9263954"
+         cy="1042.6268"
+         cx="9.714736"
+         id="path6943-8-9"
+         style="fill:#ffffff;fill-opacity:0.55681817;stroke:none;stroke-opacity:1" />
+      <text
+         transform="scale(0.74128106,1.349016)"
+         sodipodi:linespacing="125%"
+         id="text8801-3"
+         y="775.54858"
+         x="3.1189845"
+         style="font-style:normal;font-weight:normal;font-size:7.52665567px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="775.54858"
+           x="3.1189845"
+           id="tspan8803-4"
+           sodipodi:role="line">SPRD</tspan></text>
+    </g>
   </g>
 </svg>
