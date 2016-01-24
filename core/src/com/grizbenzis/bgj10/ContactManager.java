@@ -124,11 +124,15 @@ public class ContactManager implements ContactListener {
 
         playerDataComponent.alive = false;
         playerDataComponent.playerDeathTime = Constants.PLAYER_DEATH_TIME;
+
+        ResourceManager.getPlayerDeathSound().play(Constants.PLAYER_DEATH_TIME);
     }
 
     private void explodeBullet(Entity entity) {
         BulletComponent bulletComponent = entity.getComponent(BulletComponent.class);
         bulletComponent.detonate = true;
+
+        ResourceManager.getExplosionSound().play(Constants.EXPLOSION_VOLUME);
     }
 
     @Override
