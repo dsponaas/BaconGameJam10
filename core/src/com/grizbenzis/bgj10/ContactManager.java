@@ -116,12 +116,7 @@ public class ContactManager implements ContactListener {
 
         SpriteComponent spriteComponent = _spriteComponents.get(entity);
         spriteComponent.sprite = new Sprite(ResourceManager.getTexture("player_dead"));
-
-        Vector2 velocity = body.getLinearVelocity();
-        Vector2 desiredVelocity = new Vector2(0f, 0f);
-        desiredVelocity.sub(velocity).scl(body.getMass());
-        body.applyLinearImpulse(desiredVelocity.x, desiredVelocity.y, body.getWorldCenter().x, body.getWorldCenter().y, true);
-
+        
         playerDataComponent.alive = false;
         playerDataComponent.playerDeathTime = Constants.PLAYER_DEATH_TIME;
 
