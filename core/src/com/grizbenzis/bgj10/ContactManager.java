@@ -45,64 +45,46 @@ public class ContactManager implements ContactListener {
             EntityManager.getInstance().destroyEntity(entityB);
         }
 
-        else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
+        else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType || Constants.BITMASK_ALIEN == fixtureBType)) {
             EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 explodeBullet(entityA);
         }
-        else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
+        else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType || Constants.BITMASK_ALIEN == fixtureAType)) {
             EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
             if(null != enemyDataComponent)
                 explodeBullet(entityB);
         }
 
-        else if((Constants.BITMASK_EXPLOSION == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
+        else if((Constants.BITMASK_EXPLOSION == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType || Constants.BITMASK_ALIEN == fixtureBType)) {
             EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
             ExplosionComponent explosionComponent = entityA.getComponent(ExplosionComponent.class);
             if(null != enemyDataComponent && null != explosionComponent)
                 handleExplosionEnemyCollision(fixtureB, enemyDataComponent, explosionComponent);
         }
-        else if((Constants.BITMASK_EXPLOSION == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
+        else if((Constants.BITMASK_EXPLOSION == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType || Constants.BITMASK_ALIEN == fixtureAType)) {
             EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
             ExplosionComponent explosionComponent = entityB.getComponent(ExplosionComponent.class);
             if(null != enemyDataComponent && null != explosionComponent)
                 handleExplosionEnemyCollision(fixtureA, enemyDataComponent, explosionComponent);
         }
 
-        else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType)) {
+        else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType || Constants.BITMASK_ALIEN == fixtureBType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityA);
             if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
                 killPlayer(entityA, bodyA, fixtureA, playerDataComponent);
         }
-        else if((Constants.BITMASK_PLAYER == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
+        else if((Constants.BITMASK_PLAYER == fixtureBType) && (fixtureB.isSensor()) && (Constants.BITMASK_ENEMY == fixtureAType || Constants.BITMASK_ALIEN == fixtureAType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityB);
             if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
                 killPlayer(entityB, bodyB, fixtureB, playerDataComponent);
         }
 
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER == fixtureBType)) {
+        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER == fixtureBType || Constants.BITMASK_EXPLOSION == fixtureBType || Constants.BITMASK_PLAYER_BULLET == fixtureBType)) {
             PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER == fixtureAType)) {
-            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_EXPLOSION == fixtureBType)) {
-            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_EXPLOSION == fixtureAType)) {
-            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-
-        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER_BULLET == fixtureBType)) {
-            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
-            powerupComponent.pickedUp = true;
-        }
-        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER_BULLET == fixtureAType)) {
+        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER == fixtureAType || Constants.BITMASK_PLAYER_BULLET == fixtureAType || Constants.BITMASK_PLAYER_BULLET == fixtureAType)) {
             PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }
@@ -127,7 +109,7 @@ public class ContactManager implements ContactListener {
         playerDataComponent.alive = false;
         playerDataComponent.playerDeathTime = Constants.PLAYER_DEATH_TIME;
 
-        ResourceManager.getPlayerDeathSound().play(Constants.PLAYER_DEATH_TIME);
+        ResourceManager.getPlayerDeathSound().play(Constants.DEATH_VOLUME);
     }
 
     private void explodeBullet(Entity entity) {

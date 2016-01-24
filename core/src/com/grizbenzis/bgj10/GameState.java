@@ -382,12 +382,12 @@ public class GameState {
         Vector2 startVel = null;
         switch(getRandomInt(0, 2)) {
             case 0: { // RIGHT
-                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER - 40));
                 startVel = new Vector2(getRandomFloat(-0.5f, -1f), 0);
                 break;
             }
             case 1: { // LEFT
-                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER - 40));
                 startVel = new Vector2(getRandomFloat(0.5f, 1f), 0);
                 break;
             }

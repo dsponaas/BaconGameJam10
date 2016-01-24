@@ -1,14 +1,14 @@
 {
   BodyDef : {
     type: DynamicBody,
-    collisionType: ENEMY,
+    collisionType: ALIEN,
     dimensionX: 80,
     dimensionY: 40
   },
   Fixtures : [
     {
       description: none,
-      isSensor: true,
+      isSensor: false,
       type: RectangleShape,
       width: 40,
       height: 20,
