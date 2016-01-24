@@ -25,5 +25,8 @@ public class ExplosionSystem extends IteratingSystem {
         explosion.timeLeft -= (float) Time.time;
         if(explosion.timeLeft < 0f)
             EntityManager.getInstance().destroyEntity(entity);
+
+        if (explosion.destroyedEnemy)
+            explosion.lethal = false;
     }
 }

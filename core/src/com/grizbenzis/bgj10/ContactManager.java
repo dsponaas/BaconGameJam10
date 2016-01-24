@@ -47,28 +47,26 @@ public class ContactManager implements ContactListener {
 
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent) {
-                killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
+            if(null != enemyDataComponent)
                 explodeBullet(entityA);
-            }
         }
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
             EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent) {
-                killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
+            if(null != enemyDataComponent)
                 explodeBullet(entityB);
-            }
         }
 
         else if((Constants.BITMASK_EXPLOSION == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent)
-                killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
+            ExplosionComponent explosionComponent = entityA.getComponent(ExplosionComponent.class);
+            if(null != enemyDataComponent && null != explosionComponent)
+                handleExplosionEnemyCollision(fixtureB, enemyDataComponent, explosionComponent);
         }
         else if((Constants.BITMASK_EXPLOSION == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
             EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent)
-                killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
+            ExplosionComponent explosionComponent = entityB.getComponent(ExplosionComponent.class);
+            if(null != enemyDataComponent && null != explosionComponent)
+                handleExplosionEnemyCollision(fixtureA, enemyDataComponent, explosionComponent);
         }
 
         else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType)) {
@@ -101,7 +99,7 @@ public class ContactManager implements ContactListener {
         }
     }
 
-    private void killEnemy(Entity entity, Body body, Fixture fixture, EnemyDataComponent enemyDataComponent) {
+    private void killEnemy(Fixture fixture, EnemyDataComponent enemyDataComponent) {
         Filter filter = fixture.getFilterData();
         filter.maskBits = 0;
         fixture.setFilterData(filter);
@@ -129,6 +127,13 @@ public class ContactManager implements ContactListener {
     private void explodeBullet(Entity entity) {
         BulletComponent bulletComponent = entity.getComponent(BulletComponent.class);
         bulletComponent.detonate = true;
+    }
+
+    private void handleExplosionEnemyCollision(Fixture enemyFixture, EnemyDataComponent enemyDataComponent, ExplosionComponent explosionComponent){
+        if (explosionComponent.lethal) {
+            killEnemy(enemyFixture, enemyDataComponent);
+            explosionComponent.destroyedEnemy = true;
+        }
     }
 
     @Override
