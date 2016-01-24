@@ -1,6 +1,7 @@
 package com.grizbenzis.bgj10.screens;
 
 import com.badlogic.ashley.core.Engine;
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
@@ -16,6 +17,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.grizbenzis.bgj10.*;
 import com.grizbenzis.bgj10.actors.Player;
+import com.grizbenzis.bgj10.components.ParallaxBackgroundComponent;
 import com.grizbenzis.bgj10.components.PlayerDataComponent;
 import com.grizbenzis.bgj10.systems.*;
 
@@ -69,8 +71,7 @@ public class GameScreen implements Screen {
 
         _shapeRenderer = new ShapeRenderer();
 
-        _backgroundSprite = new Sprite(ResourceManager.getTexture("background"));
-        _backgroundSprite.setPosition(0f, 0f);
+        makeBackgroundHack();
     }
 
     @Override
@@ -90,7 +91,7 @@ public class GameScreen implements Screen {
         GameState.getInstance().update();
 
         _spriteBatch.begin();
-        _backgroundSprite.draw(_spriteBatch);
+//        _backgroundSprite.draw(_spriteBatch);
         _engine.update((float) Time.time);
         _spriteBatch.setProjectionMatrix(_camera.combined);
         renderActivePowerups();
@@ -105,7 +106,7 @@ public class GameScreen implements Screen {
 
         EntityManager.getInstance().update();
 
-        _debugRenderer.render(_world, debugMatrix);
+//        _debugRenderer.render(_world, debugMatrix);
     }
 
     @Override
@@ -156,12 +157,14 @@ public class GameScreen implements Screen {
     public Engine initializeEngine() {
         Engine engine = new Engine();
 
-        PositionSystem positionSystem = new PositionSystem(0);
-        RenderSpriteSystem renderSpriteSystem = new RenderSpriteSystem(_spriteBatch, 1);
-        PlayerDataSystem playerDataSystem = new PlayerDataSystem(2);
-        PowerupSystem powerupSystem = new PowerupSystem(3);
-        EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(4);
+        ParallaxBackgroundRenderingSystem parallaxSystem = new ParallaxBackgroundRenderingSystem(_spriteBatch, 0);
+        PositionSystem positionSystem = new PositionSystem(1);
+        RenderSpriteSystem renderSpriteSystem = new RenderSpriteSystem(_spriteBatch, 2);
+        PlayerDataSystem playerDataSystem = new PlayerDataSystem(3);
+        PowerupSystem powerupSystem = new PowerupSystem(4);
+        EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(5);
 
+        engine.addSystem(parallaxSystem);
         engine.addSystem(positionSystem);
         engine.addSystem(renderSpriteSystem);
         engine.addSystem(playerDataSystem);
@@ -273,4 +276,25 @@ public class GameScreen implements Screen {
         body.createFixture(fixtureDef);
         shape.dispose();
     }
+
+    private void makeBackgroundHack() {
+        Sprite sprite = new Sprite(ResourceManager.getTexture("background_rear"));
+        Entity entity = new Entity();
+        ParallaxBackgroundComponent backgroundComponent = new ParallaxBackgroundComponent(sprite, 1, 0.1f, 0f);
+        entity.add(backgroundComponent);
+        EntityManager.getInstance().addEntity(entity);
+
+        Sprite sprite2 = new Sprite(ResourceManager.getTexture("background_middle"));
+        Entity entity2 = new Entity();
+        ParallaxBackgroundComponent backgroundComponent2 = new ParallaxBackgroundComponent(sprite2, 2, 0.3f, 0f);
+        entity2.add(backgroundComponent2);
+        EntityManager.getInstance().addEntity(entity2);
+
+        Sprite sprite3 = new Sprite(ResourceManager.getTexture("background_front"));
+        Entity entity3 = new Entity();
+        ParallaxBackgroundComponent backgroundComponent3 = new ParallaxBackgroundComponent(sprite3, 3, 0.6f, 0f);
+        entity3.add(backgroundComponent3);
+        EntityManager.getInstance().addEntity(entity3);
+    }
 }
+

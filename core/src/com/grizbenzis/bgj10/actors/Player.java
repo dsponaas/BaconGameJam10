@@ -162,7 +162,7 @@ public class Player extends Actor {
             shoot(pos.x, pos.y, rightShotRotation, power);
         }
 
-        Vector2 deltaVelocity = (new Vector2(0f, 1f)).rotateRad(positionComponent.rotation).scl(power);
+        Vector2 deltaVelocity = (new Vector2(0f, 1f)).rotateRad(positionComponent.rotation).scl(power * Constants.SHIP_ACCEL_FACTOR);
         Vector2 impulse = deltaVelocity.scl(getBody().getMass());
         getBody().applyLinearImpulse(impulse.x, impulse.y, getBody().getWorldCenter().x, getBody().getWorldCenter().y, true);
     }

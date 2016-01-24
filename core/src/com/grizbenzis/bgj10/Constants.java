@@ -29,12 +29,13 @@ public class Constants {
     public static final float BULLET_SPEED = .1f;
     public static final float BULLET_EXPLOSION_DURATION = 30f;
     public static final float SHOOTING_COOLDOWN = 12f;
-    public static final float SHOOTING_CHARGE_TIME = 12f;
+    public static final float SHOOTING_CHARGE_TIME = 24f;
     public static final float PLAYER_DEATH_TIME = 180f;
     public static final float PLAYER_INVINCIBILITY_TIME = 180f;
     public static final float SPREAD_SHOT_ANGLE = (float)Math.PI * 0.1f;
     public static final float SHOOTING_MIN_POWER_FACTOR = 0.3f;
-    public static final float SHOOTING_MAX_POWER_FACTOR = 1f;
+    public static final float SHOOTING_MAX_POWER_FACTOR = 1.5f;
+    public static final float SHIP_ACCEL_FACTOR = 0.8f;
 
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;
     public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1000f;

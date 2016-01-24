@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024"
+   height="738"
+   viewBox="0 0 1024 738.00001"
+   id="svg3436"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="background_front.svg"
+   inkscape:export-filename="/Users/sponaas/workspace/BaconGameJam10/core/assets/background_front.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs3438" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="1368.3017"
+     inkscape:cy="711.7655"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="775"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     borderlayer="true" />
+  <metadata
+     id="metadata3441">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-314.36216)">
+    <rect
+       style="fill:#000000"
+       id="rect3463"
+       width="1205.7142"
+       height="808.57141"
+       x="1275.1038"
+       y="255.36285" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12"
+       cx="956.15833"
+       cy="426.38492"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-3"
+       cx="234.75945"
+       cy="908.11237"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-9"
+       cx="463.86206"
+       cy="588.50012"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-7"
+       cx="724.07733"
+       cy="970.33777"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffffff"
+       id="path3656-64-7-4-12-98"
+       cx="659.0235"
+       cy="517.78943"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-2"
+       cx="127.27922"
+       cy="387.68179"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-72"
+       cx="101.82338"
+       cy="939.2251"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#0000ff"
+       id="path3656-64-7-4-12-29"
+       cx="557.20013"
+       cy="868.5144"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34"
+       cx="325.2691"
+       cy="772.3479"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34-2"
+       cx="130.10765"
+       cy="602.64227"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34-8"
+       cx="444.06305"
+       cy="523.44629"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34-5"
+       cx="670.33722"
+       cy="930.73981"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34-0"
+       cx="1004.0916"
+       cy="1015.5926"
+       rx="3.957123"
+       ry="3.5823698" />
+    <ellipse
+       style="fill:#ffd42a"
+       id="path3656-64-7-4-12-34-4"
+       cx="896.61139"
+       cy="684.66663"
+       rx="3.957123"
+       ry="3.5823698" />
+  </g>
+</svg>
