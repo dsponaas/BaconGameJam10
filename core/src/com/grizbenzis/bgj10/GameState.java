@@ -21,6 +21,7 @@ public class GameState {
     private float _enemySpawnTimer;
     private float _alienSpawnTimer;
     private float _powerupSpawnTimer;
+    private float _blackHoleTimer;
     private Random _rand;
     private int _enemyCount;
     private int _alienCount;
@@ -81,6 +82,8 @@ public class GameState {
 
         _alienSpawnTimer = 0f;
         _alienCount = 0;
+
+        _blackHoleTimer = getBlackholeTimer();
     }
 
     public static void initialize(float width, float height) {
@@ -118,6 +121,13 @@ public class GameState {
             _powerupSpawnTimer = Constants.TIME_BETWEEN_POWERUPS;
             spawnPowerup();
         }
+        if(_level >= Constants.BLACK_HOLE_MIN_LEVEL) {
+            _blackHoleTimer -= Time.time;
+            if(_blackHoleTimer < 0f) {
+                _blackHoleTimer = getBlackholeTimer();
+                spawnBlackHole();
+            }
+        }
     }
 
     private final float MIN_SPAWN_INCREASE_RATE_HACK = 0.7f;
@@ -135,10 +145,7 @@ public class GameState {
     }
 
     private final float getBlackholeTimer() {
-        if(_level < Constants.BLACK_HOLE_MIN_LEVEL) {
-//            _blackHoleTimer;
-        }
-        return 0f;
+        return Constants.BLACK_HOLE_DEFAULT_SPAWN_TIMER;
     }
 
     private final float POWERUP_LEVEL_BOUNDS_BUFFER = 100f;
@@ -288,6 +295,28 @@ public class GameState {
         bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, impulse.x > 0 ? 0 : _width, posAndVel[0].y, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
+
+        EntityManager.getInstance().addEntity(entity);
+    }
+
+    private void spawnBlackHole() {
+        Entity entity = new Entity();
+
+        Vector2 pos = new Vector2();
+        float curDistance = -1f;
+        while(curDistance < Constants.BLACK_HOLE_POS_BUFFER) {
+            pos.x = getRandomFloat(Constants.BLACK_HOLE_POS_BUFFER, _width - Constants.BLACK_HOLE_POS_BUFFER);
+            pos.y = getRandomFloat(Constants.BLACK_HOLE_POS_BUFFER, _height - Constants.BLACK_HOLE_POS_BUFFER);
+            curDistance = _player.getCenterPos().dst(pos);
+        }
+
+        Sprite sprite = new Sprite(ResourceManager.getTexture("blood1"));
+        SpriteComponent spriteComponent = new SpriteComponent(sprite);
+        sprite.setCenter(pos.x, pos.y);
+
+        PositionComponent positionComponent = new PositionComponent(pos.x, pos.y);
+
+        entity.add(new BlackHoleComponent()).add(new RenderComponent(0)).add(spriteComponent).add(positionComponent);
 
         EntityManager.getInstance().addEntity(entity);
     }

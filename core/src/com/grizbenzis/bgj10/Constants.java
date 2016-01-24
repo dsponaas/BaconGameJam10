@@ -14,6 +14,8 @@ public class Constants {
 
     public static final float TOP_OF_SCREEN_BUFFER = 30f;
 
+    public static final float BODY_MAX_SPEED = 5f;
+
     public static final float BASE_SPAWN_TIMER = 600f;
     public static final float TIME_PER_LEVEL = 600f;
     public static final int INITIAL_LIVES_COUNT = 2;
@@ -52,8 +54,12 @@ public class Constants {
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
     public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1000f;
 
-    public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 1000f;
-    public static final int BLACK_HOLE_MIN_LEVEL = 1;
+    public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 500f;
+    public static final int BLACK_HOLE_MIN_LEVEL = 4;
+    public static final float BLACK_HOLE_POS_BUFFER = 200f;
+    public static final float BLACK_HOLE_MAX_GRAV_DIST_SQUARED = 90000f; // dist = 300
+    public static final float BLACK_HOLE_LIFE_TIME = 180f;
+    public static final float BLACK_HOLE_MAX_GRAV = 0.3f;
 
     public static final float PLAYER_SHOOTING_VOLUME = 0.2f;
     public static final float EXPLOSION_VOLUME = 0.6f;

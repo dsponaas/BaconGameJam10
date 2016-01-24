@@ -2,6 +2,8 @@ package com.grizbenzis.bgj10.screens;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
@@ -17,8 +19,10 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.grizbenzis.bgj10.*;
 import com.grizbenzis.bgj10.actors.Player;
+import com.grizbenzis.bgj10.components.BodyComponent;
 import com.grizbenzis.bgj10.components.ParallaxBackgroundComponent;
 import com.grizbenzis.bgj10.components.PlayerDataComponent;
+import com.grizbenzis.bgj10.components.PositionComponent;
 import com.grizbenzis.bgj10.systems.*;
 
 /**
@@ -26,7 +30,7 @@ import com.grizbenzis.bgj10.systems.*;
  */
 public class GameScreen implements Screen {
 
-    private Engine _engine;
+    private static Engine _engine;
     private OrthographicCamera _camera;
     private World _world;
     private ContactManager _contactManager;
@@ -164,6 +168,8 @@ public class GameScreen implements Screen {
         EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(6);
         BulletSystem bulletSystem = new BulletSystem(7);
         ExplosionSystem explosionSystem = new ExplosionSystem(8);
+        BlackHoleSystem blackHoleSystem = new BlackHoleSystem(9);
+        MaxSpeedSystem maxSpeedSystem = new MaxSpeedSystem(10);
 
         engine.addSystem(parallaxSystem);
         engine.addSystem(positionSystem);
@@ -174,6 +180,8 @@ public class GameScreen implements Screen {
         engine.addSystem(enemyDeathSystem);
         engine.addSystem(bulletSystem);
         engine.addSystem(explosionSystem);
+        engine.addSystem(blackHoleSystem);
+        engine.addSystem(maxSpeedSystem);
 
         return engine;
     }
@@ -293,5 +301,10 @@ public class GameScreen implements Screen {
         entity3.add(backgroundComponent3);
         EntityManager.getInstance().addEntity(entity3);
     }
+
+    public static ImmutableArray<Entity> getAllEntitiesWithPositionAndBody() {
+        return _engine.getEntitiesFor(Family.all(PositionComponent.class, BodyComponent.class).get());
+    }
+
 }
 

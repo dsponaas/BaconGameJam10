@@ -26,7 +26,7 @@ public class PositionSystem extends IteratingSystem {
     private ComponentMapper<BulletComponent> _bulletComponents = ComponentMapper.getFor(BulletComponent.class);
 
     public PositionSystem(int priority) {
-        super(Family.all(PositionComponent.class).get(), priority);
+        super(Family.all(PositionComponent.class, BodyComponent.class).get(), priority);
     }
 
     public void processEntity(Entity entity, float deltaTime) {
