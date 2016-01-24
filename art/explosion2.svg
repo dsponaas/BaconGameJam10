@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="explosion2.svg"
-   inkscape:export-filename="/Users/kyle/Development/workspace/BaconGameJam10/core/assets/explosion_large.png"
+   inkscape:export-filename="/Users/kyle/Development/workspace/BaconGameJam10/core/assets/explosion.png"
    inkscape:export-xdpi="45"
    inkscape:export-ydpi="45">
   <defs
@@ -442,7 +442,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="-19.824447"
+     inkscape:cx="-168.39588"
      inkscape:cy="50.269995"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"

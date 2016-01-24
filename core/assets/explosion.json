@@ -4,15 +4,15 @@
     type: StaticBody,
     gravityScale: 0,
     collisionType: EXPLOSION,
-    dimensionX: 50,
-    dimensionY: 50
+    dimensionX: 100,
+    dimensionY: 100
   },
   Fixtures : [
     {
       description: none,
       isSensor: true,
       type: CircleShape,
-      radius: 25,
+      radius: 50,
       density: 1,
       friction: 0,
       restitution: 0,
