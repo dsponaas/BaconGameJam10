@@ -8,9 +8,14 @@ import com.badlogic.ashley.core.Component;
 public class ExplosionComponent extends Component {
 
     public float timeLeft;
+    public boolean destroyedEnemy;
+    public boolean lethal;
 
     public ExplosionComponent(float timeLeftInit) {
+
         timeLeft = timeLeftInit;
+        lethal = true;
+
     }
 
 }
