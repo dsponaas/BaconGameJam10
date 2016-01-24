@@ -1,6 +1,8 @@
 {
   BodyDef : {
+    fixedRotation: false,
     type: DynamicBody,
+    gravityScale: 0,
     collisionType: ALIEN,
     dimensionX: 80,
     dimensionY: 40
@@ -12,7 +14,9 @@
       type: RectangleShape,
       width: 40,
       height: 20,
-      x: 0,
+      density: 0.025,
+      restitution: 0.25,
+      x: 14,
       y: 0
     }
   ]

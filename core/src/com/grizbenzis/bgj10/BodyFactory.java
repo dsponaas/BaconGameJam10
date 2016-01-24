@@ -32,7 +32,7 @@ public class BodyFactory {
         JsonValue jsonBody = jsonRoot.get("BodyDef");
         BodyDef bodyDef = new BodyDef();
 
-        bodyDef.fixedRotation = true;
+        bodyDef.fixedRotation = false;
         bodyDef.gravityScale = 0f;
         float dimensionX = jsonBody.getFloat("dimensionX");
         float dimensionY = jsonBody.getFloat("dimensionY");

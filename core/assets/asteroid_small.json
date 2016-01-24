@@ -14,7 +14,7 @@
       type: CircleShape,
       radius: 10,
       density: 1000,
-      friction: 0,
+      friction: 1,
       restitution: 0.5,
       x: 0,
       y: 0

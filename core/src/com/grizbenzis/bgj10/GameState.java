@@ -292,7 +292,7 @@ public class GameState {
         RenderComponent renderComponent = new RenderComponent(0);
 
         Vector2 impulse = posAndVel[1].scl(Constants.ALIEN_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
-        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, impulse.x > 0 ? 0 : _width, posAndVel[0].y, true);
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 

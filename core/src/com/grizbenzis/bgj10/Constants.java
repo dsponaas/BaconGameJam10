@@ -29,7 +29,7 @@ public class Constants {
     public static final short BITMASK_BLACK_HOLE = 0x0040;
     public static final short BITMASK_ALIEN = 0x0080;
 
-    public static final float PLAYER_ROTATION_SPEED = 0.03f;
+    public static final float PLAYER_ROTATION_SPEED = 1f;
     public static final float BULLET_SPEED = .1f;
     public static final float BULLET_EXPLOSION_DURATION = 30f;
     public static final float SHOOTING_COOLDOWN = 12f;
@@ -47,13 +47,13 @@ public class Constants {
     public static final float ALIEN_SPAWN_SPEED_FACTOR = 1.1f;
 
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;
-    public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1000f;
+    public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1f;
     public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = .5f;
     public static final int MEDIUM_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 1000f;
+    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 0.3f;
     public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = .3f;
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1000f;
+    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 0.1f;
 
     public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 500f;
     public static final int BLACK_HOLE_MIN_LEVEL = 4;
