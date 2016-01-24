@@ -417,7 +417,7 @@ public class GameState {
     }
 
     public int getMaxAliens() {
-        return (int)(((float)_level * .75f));
+        return (int)(((float)_level * .5f));
     }
 
 }
