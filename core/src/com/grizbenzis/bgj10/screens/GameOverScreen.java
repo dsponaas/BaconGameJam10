@@ -39,6 +39,8 @@ public class GameOverScreen implements Screen {
         InputMultiplexer inputMultiplexer = new InputMultiplexer();
         inputMultiplexer.addProcessor(new SimpleInput());
         Gdx.input.setInputProcessor(inputMultiplexer);
+
+        ResourceManager.getGameMusic().stop();
     }
 
     @Override

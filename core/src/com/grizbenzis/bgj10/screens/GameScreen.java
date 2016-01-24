@@ -72,6 +72,8 @@ public class GameScreen implements Screen {
         _shapeRenderer = new ShapeRenderer();
 
         makeBackgroundHack();
+
+        ResourceManager.getGameMusic().play();
     }
 
     @Override
