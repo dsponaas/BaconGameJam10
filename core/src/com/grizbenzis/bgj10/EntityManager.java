@@ -48,10 +48,14 @@ public class EntityManager {
             EnemyDataComponent enemyDataComponent = _enemyDataComponents.get(entity);
             switch (enemyDataComponent.type){
                 case ASTEROID_LARGE:
-                case ASTEROID_MEDIUM:
-                case ASTEROID_SMALL:
-                    GameState.getInstance().addEnemy();
+                    GameState.getInstance().addEnemy(6);
                     break;
+//                case ASTEROID_MEDIUM:
+//                    GameState.getInstance().addEnemy(4);
+//                    break;
+//                case ASTEROID_SMALL:
+//                    GameState.getInstance().addEnemy(2);
+//                    break;
                 case ALIEN:
                     GameState.getInstance().addAlien();
                     break;
@@ -64,10 +68,14 @@ public class EntityManager {
         if(_enemyDataComponents.has(entity)) {
             EnemyDataComponent enemyDataComponent = _enemyDataComponents.get(entity);
             switch (enemyDataComponent.type){
-                case ASTEROID_LARGE:
-                case ASTEROID_MEDIUM:
+//                case ASTEROID_LARGE:
+//                    GameState.getInstance().removeEnemy(6);
+//                    break;
+//                case ASTEROID_MEDIUM:
+//                    GameState.getInstance().addEnemy();
+//                    break;
                 case ASTEROID_SMALL:
-                    GameState.getInstance().removeEnemy();
+                    GameState.getInstance().removeEnemy(1);
                     break;
                 case ALIEN:
                     GameState.getInstance().removeAlien();

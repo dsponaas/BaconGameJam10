@@ -25,11 +25,11 @@ public class GameState {
     private Random _rand;
     private int _enemyCount;
     private int _alienCount;
-    public void addEnemy() {
-        ++_enemyCount;
+    public void addEnemy(int count) {
+        _enemyCount += count;
     }
-    public void removeEnemy() {
-        --_enemyCount;
+    public void removeEnemy(int count) {
+        _enemyCount -= count;
     }
     public void addAlien() {
         ++_alienCount;
