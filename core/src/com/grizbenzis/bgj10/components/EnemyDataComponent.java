@@ -21,6 +21,7 @@ public class EnemyDataComponent extends Component {
             case ASTEROID_LARGE: return 10;
             case ASTEROID_MEDIUM: return 15;
             case ASTEROID_SMALL: return 20;
+            case ALIEN: return 20;
         }
         return 0;
     }

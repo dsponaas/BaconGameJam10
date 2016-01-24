@@ -37,6 +37,8 @@ public class Constants {
     public static final float SHOOTING_MAX_POWER_FACTOR = 1.5f;
     public static final float SHIP_ACCEL_FACTOR = 0.8f;
 
+    public static final float ALIEN_SPAWN_SPEED_FACTOR = 0.7f;
+
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;
     public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1000f;
     public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = .5f;
@@ -83,7 +85,8 @@ public class Constants {
     public enum EnemyType {
         ASTEROID_LARGE,
         ASTEROID_MEDIUM,
-        ASTEROID_SMALL
+        ASTEROID_SMALL,
+        ALIEN
     }
 
 }

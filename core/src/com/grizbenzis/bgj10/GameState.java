@@ -247,6 +247,28 @@ public class GameState {
         EntityManager.getInstance().addEntity(entity);
     }
 
+    public void spawnAlien() {
+        Entity entity = new Entity();
+
+        Vector2[] posAndVel = initAlienPosAndVel();
+
+        PositionComponent positionComponent = new PositionComponent(posAndVel[0]);
+
+        Sprite sprite = new Sprite(ResourceManager.getTexture("alien"));
+
+        SpriteComponent spriteComponent = new SpriteComponent(sprite);
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "alien.json", posAndVel[0]));
+        EnemyDataComponent enemyDataComponent = new EnemyDataComponent(Constants.EnemyType.ALIEN);
+        RenderComponent renderComponent = new RenderComponent(0);
+
+        Vector2 impulse = posAndVel[1].scl(Constants.ALIEN_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
+        bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+
+        entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
+
+        EntityManager.getInstance().addEntity(entity);
+    }
+
     private float getRandomFloat(float start, float end) {
         return start + ((end - start) * _rand.nextFloat());
     }
@@ -279,18 +301,44 @@ public class GameState {
             case 0: { // TOP
                 startPos = new Vector2(getRandomFloat(0f, _width), _height);
                 startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, -1f));
+                break;
             }
             case 1: { // RIGHT
                 startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
                 startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+                break;
             }
             case 2: { // BOTTOM
                 startPos = new Vector2(getRandomFloat(0f, _width), 0f);
                 startVel = new Vector2(minorVelComponent, getRandomFloat(0.5f, 1f));
+                break;
             }
             case 3: { // LEFT
                 startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
                 startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+                break;
+            }
+        }
+        retval[0] = startPos;
+        retval[1] = startVel;
+        return retval;
+    }
+
+    private Vector2[] initAlienPosAndVel() {
+        Vector2[] retval = new Vector2[2];
+        float minorVelComponent = getRandomFloat(-0.6f, 0.6f);
+        Vector2 startPos = null;
+        Vector2 startVel = null;
+        switch(getRandomInt(0, 1)) {
+            case 0: { // RIGHT
+                startPos = new Vector2(_width, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(-1f, 0.5f), minorVelComponent);
+                break;
+            }
+            case 1: { // LEFT
+                startPos = new Vector2(0f, getRandomFloat(0f, _height - Constants.TOP_OF_SCREEN_BUFFER));
+                startVel = new Vector2(getRandomFloat(1f, 0.5f), minorVelComponent);
+                break;
             }
         }
         retval[0] = startPos;
