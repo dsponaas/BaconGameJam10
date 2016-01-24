@@ -293,6 +293,7 @@ public class GameState {
 
         Vector2 impulse = posAndVel[1].scl(Constants.ALIEN_SPAWN_SPEED_FACTOR * bodyComponent.body.getMass());
         bodyComponent.body.applyLinearImpulse(impulse.x, impulse.y, bodyComponent.body.getWorldCenter().x, bodyComponent.body.getWorldCenter().y, true);
+        bodyComponent.body.setFixedRotation(true);
 
         entity.add(positionComponent).add(spriteComponent).add(bodyComponent).add(enemyDataComponent).add(renderComponent);
 
