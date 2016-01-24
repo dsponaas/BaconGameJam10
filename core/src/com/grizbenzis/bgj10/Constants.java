@@ -23,6 +23,7 @@ public class Constants {
     public static final short BITMASK_LEVEL_BOUNDS = 0x0004;
     public static final short BITMASK_PLAYER_BULLET = 0x0008;
     public static final short BITMASK_POWERUP = 0x0010;
+    public static final short BITMASK_EXPLOSION = 0x0020;
 
     public static final float PLAYER_ROTATION_SPEED = 0.03f;
     public static final float BULLET_SPEED = .1f;
