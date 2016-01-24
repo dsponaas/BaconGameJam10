@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.grizbenzis.bgj10.Constants;
 import com.grizbenzis.bgj10.GameState;
 import com.grizbenzis.bgj10.components.BodyComponent;
+import com.grizbenzis.bgj10.components.BulletComponent;
 import com.grizbenzis.bgj10.components.PositionComponent;
 import com.grizbenzis.bgj10.components.SpriteComponent;
 
@@ -22,6 +23,7 @@ public class PositionSystem extends IteratingSystem {
     private ComponentMapper<PositionComponent> _positionComponents = ComponentMapper.getFor(PositionComponent.class);
     private ComponentMapper<SpriteComponent> _spriteComponents = ComponentMapper.getFor(SpriteComponent.class);
     private ComponentMapper<BodyComponent> _bodyComponents = ComponentMapper.getFor(BodyComponent.class);
+    private ComponentMapper<BulletComponent> _bulletComponents = ComponentMapper.getFor(BulletComponent.class);
 
     public PositionSystem(int priority) {
         super(Family.all(PositionComponent.class).get(), priority);
@@ -31,6 +33,7 @@ public class PositionSystem extends IteratingSystem {
         PositionComponent positionComponent = _positionComponents.get(entity);
         SpriteComponent spriteComponent = _spriteComponents.get(entity);
         BodyComponent bodyComponent = _bodyComponents.get(entity);
+        BulletComponent bulletComponent = _bulletComponents.get(entity);
 
         float spriteHeight;
         float spriteWidth;
@@ -48,22 +51,22 @@ public class PositionSystem extends IteratingSystem {
         spriteComponent.sprite.setY(positionComponent.y);
         spriteComponent.sprite.setRotation((float)Math.toDegrees(positionComponent.rotation));
 
-        GameState gameState = GameState.getInstance();
-        if(spriteComponent.sprite.getX() > gameState.getMaxGameboardX()) {
-            float newX = (GameState.getInstance().getMinGameboardX() - (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
-            bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
-        }
-        else if((spriteComponent.sprite.getX() + spriteWidth) < gameState.getMinGameboardX()) {
-            float newX = (GameState.getInstance().getMaxGameboardX() + (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
-            bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
-        }
-        if (spriteComponent.sprite.getY() > gameState.getMaxGameboardY()) {
-            float newY = (GameState.getInstance().getMinGameboardY() - (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
-            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
-        }
-        else if((spriteComponent.sprite.getY() + spriteHeight) < gameState.getMinGameboardY()) {
-            float newY = (GameState.getInstance().getMaxGameboardY() + (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
-            bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
+        if(null == bulletComponent) {
+            GameState gameState = GameState.getInstance();
+            if (spriteComponent.sprite.getX() > gameState.getMaxGameboardX()) {
+                float newX = (GameState.getInstance().getMinGameboardX() - (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
+                bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
+            } else if ((spriteComponent.sprite.getX() + spriteWidth) < gameState.getMinGameboardX()) {
+                float newX = (GameState.getInstance().getMaxGameboardX() + (spriteWidth / 4)) * Constants.PIXELS_TO_METERS;
+                bodyComponent.body.setTransform(newX, bodyComponent.body.getPosition().y, bodyComponent.body.getAngle());
+            }
+            if (spriteComponent.sprite.getY() > gameState.getMaxGameboardY()) {
+                float newY = (GameState.getInstance().getMinGameboardY() - (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
+                bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
+            } else if ((spriteComponent.sprite.getY() + spriteHeight) < gameState.getMinGameboardY()) {
+                float newY = (GameState.getInstance().getMaxGameboardY() + (spriteHeight / 4)) * Constants.PIXELS_TO_METERS;
+                bodyComponent.body.setTransform(bodyComponent.body.getPosition().x, newY, bodyComponent.body.getAngle());
+            }
         }
     }
 
