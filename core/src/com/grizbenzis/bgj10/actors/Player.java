@@ -37,7 +37,7 @@ public class Player extends Actor {
 
         PositionComponent playerPositionComponent = new PositionComponent(position.x, position.y);
         BodyComponent playerBodyComponent = new BodyComponent(playerPositionComponent, body);
-        RenderComponent renderComponent = new RenderComponent(0);
+        RenderComponent renderComponent = new RenderComponent(100);
         PlayerDataComponent playerDataComponent = new PlayerDataComponent();
 
         entity.add(playerPositionComponent).add(playerBodyComponent).add(spriteComponent).add(renderComponent).add(playerDataComponent);

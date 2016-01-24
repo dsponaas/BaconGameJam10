@@ -43,7 +43,7 @@ public class BulletSystem extends IteratingSystem {
             PositionComponent positionComponent = new PositionComponent(sourcePos.x, sourcePos.y);
             Body body = BodyFactory.getInstance().generate(explosionEntity, jsonFile, new Vector2(sourcePos.x, sourcePos.y));
             BodyComponent bodyComponent = new BodyComponent(positionComponent, body);
-            RenderComponent renderComponent = new RenderComponent(0);
+            RenderComponent renderComponent = new RenderComponent(99);
             ExplosionComponent explosionComponent = new ExplosionComponent(Constants.BULLET_EXPLOSION_DURATION);
 
             explosionEntity.add(bulletSprite).add(positionComponent).add(bodyComponent).add(renderComponent).add(explosionComponent);
