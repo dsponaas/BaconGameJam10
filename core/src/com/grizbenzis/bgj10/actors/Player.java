@@ -135,6 +135,8 @@ public class Player extends Actor {
         }
     }
 
+    private static final float BULLET_POS_Y_OFFSET_HACK = 12f;
+    private static final float BULLET_POS_X_OFFSET_HACK = 50f;
     private void fire() {
         PositionComponent positionComponent = getPosition();
         Vector2 pos = getCenterPos();
@@ -153,6 +155,10 @@ public class Player extends Actor {
         }
         float weaponCharge = getWeaponCharge();
         float power = Constants.SHOOTING_MIN_POWER_FACTOR + ((Constants.SHOOTING_MAX_POWER_FACTOR - Constants.SHOOTING_MIN_POWER_FACTOR) * weaponCharge);
+
+        Vector2 bulletPositionYOffsetHack = new Vector2(0f, 1f).rotateRad(rotation).scl(BULLET_POS_Y_OFFSET_HACK);
+        Vector2 bulletPositionXOffsetHack = new Vector2(1f, 0f).rotateRad(rotation).scl(BULLET_POS_X_OFFSET_HACK);
+        pos = pos.add(bulletPositionYOffsetHack).add(bulletPositionXOffsetHack);
 
         shoot(pos.x, pos.y, rotation, power);
         if(GameState.getInstance().getPlayerData().spreadShotTime > 0f) {
