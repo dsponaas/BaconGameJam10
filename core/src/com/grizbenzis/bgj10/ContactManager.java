@@ -58,7 +58,7 @@ public class ContactManager implements ContactListener {
             EntityManager.getInstance().destroyEntity(entityB);
         }
 
-        else if((Constants.BITMASK_PLAYER == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
+        else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityA);
             if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
                 killPlayer(entityA, bodyA, fixtureA, playerDataComponent);

@@ -14,8 +14,8 @@ public class Constants {
 
     public static final float TOP_OF_SCREEN_BUFFER = 30f;
 
-    public static final float BASE_SPAWN_TIMER = 1000f;
-    public static final float TIME_PER_LEVEL = 1000f;
+    public static final float BASE_SPAWN_TIMER = 600f;
+    public static final float TIME_PER_LEVEL = 600f;
     public static final int INITIAL_LIVES_COUNT = 10;
 
     public static final short BITMASK_PLAYER = 0x0001;
@@ -26,7 +26,7 @@ public class Constants {
 
     public static final float PLAYER_ROTATION_SPEED = 0.08f;
     public static final float BULLET_SPEED = .1f;
-    public static final float SHOOTING_COOLDOWN = 5f;
+    public static final float SHOOTING_COOLDOWN = 8f;
     public static final float SHOOTING_CHARGE_TIME = 10f;
     public static final float PLAYER_DEATH_TIME = 180f;
     public static final float PLAYER_INVINCIBILITY_TIME = 180f;
