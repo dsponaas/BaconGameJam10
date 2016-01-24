@@ -175,8 +175,9 @@ public class Player extends Actor {
         Body body = BodyFactory.getInstance().generate(bulletEntity, "bullet.json", new Vector2(posX, posY));
         BodyComponent bulletBody = new BodyComponent(bulletPosition, body);
         RenderComponent renderComponent = new RenderComponent(0);
+        BulletComponent bulletComponent = new BulletComponent();
 
-        bulletEntity.add(bulletSprite).add(bulletPosition).add(bulletBody).add(renderComponent);
+        bulletEntity.add(bulletSprite).add(bulletPosition).add(bulletBody).add(renderComponent).add(bulletComponent);
         EntityManager.getInstance().addEntity(bulletEntity);
 
         float velX = (float)Math.cos(angle);

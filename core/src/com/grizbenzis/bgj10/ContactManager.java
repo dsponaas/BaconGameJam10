@@ -47,15 +47,17 @@ public class ContactManager implements ContactListener {
 
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent)
+            if(null != enemyDataComponent) {
                 killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
-            EntityManager.getInstance().destroyEntity(entityA);
+                explodeBullet(entityA);
+            }
         }
         else if((Constants.BITMASK_PLAYER_BULLET == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
             EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
-            if(null != enemyDataComponent)
+            if(null != enemyDataComponent) {
                 killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
-            EntityManager.getInstance().destroyEntity(entityB);
+                explodeBullet(entityB);
+            }
         }
 
         else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType)) {
@@ -102,6 +104,11 @@ public class ContactManager implements ContactListener {
 
         playerDataComponent.alive = false;
         playerDataComponent.playerDeathTime = Constants.PLAYER_DEATH_TIME;
+    }
+
+    private void explodeBullet(Entity entity) {
+        BulletComponent bulletComponent = entity.getComponent(BulletComponent.class);
+        bulletComponent.detonate = true;
     }
 
     @Override

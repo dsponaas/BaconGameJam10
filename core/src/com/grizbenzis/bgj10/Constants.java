@@ -27,6 +27,7 @@ public class Constants {
 
     public static final float PLAYER_ROTATION_SPEED = 0.03f;
     public static final float BULLET_SPEED = .1f;
+    public static final float BULLET_EXPLOSION_DURATION = 30f;
     public static final float SHOOTING_COOLDOWN = 12f;
     public static final float SHOOTING_CHARGE_TIME = 12f;
     public static final float PLAYER_DEATH_TIME = 180f;
