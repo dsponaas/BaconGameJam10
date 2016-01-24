@@ -36,20 +36,20 @@ public class BlackHoleSystem extends IteratingSystem {
 
         Vector2 blackHolePosition = new Vector2(blackHolePositionComponent.x, blackHolePositionComponent.y);
 
-        final float HACK_SPIN_FACTOR = 20f;
-        SpriteComponent spriteComponent = _spriteComponents.get(entity);
-        float newRotation = blackHolePositionComponent.rotation;
-        newRotation += HACK_SPIN_FACTOR * Time.time;
-        if(newRotation >= 360f) {
-            newRotation -= 360f;
-        }
-        else if(newRotation < 0f) {
-            newRotation += 360f;
-        }
-        blackHolePositionComponent.rotation = newRotation;
-        spriteComponent.sprite.setRotation(newRotation);
-        BodyComponent bodyComponent = _bodyComponents.get(entity);
-        bodyComponent.body.applyTorque(HACK_SPIN_FACTOR, true);
+//        final float HACK_SPIN_FACTOR = 2000f;
+//        SpriteComponent spriteComponent = _spriteComponents.get(entity);
+//        float newRotation = blackHolePositionComponent.rotation;
+//        newRotation += HACK_SPIN_FACTOR * Time.time;
+//        if(newRotation >= 360f) {
+//            newRotation -= 360f;
+//        }
+//        else if(newRotation < 0f) {
+//            newRotation += 360f;
+//        }
+//        blackHolePositionComponent.rotation = newRotation;
+//        spriteComponent.sprite.setRotation(newRotation);
+//        BodyComponent bodyComponent = _bodyComponents.get(entity);
+//        bodyComponent.body.applyTorque(HACK_SPIN_FACTOR, true);
 
         --blackHoleComponent.lifeTimer;
         if(blackHoleComponent.lifeTimer < 0f) {
