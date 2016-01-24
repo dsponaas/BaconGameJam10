@@ -311,13 +311,16 @@ public class GameState {
             curDistance = _player.getCenterPos().dst(pos);
         }
 
-        Sprite sprite = new Sprite(ResourceManager.getTexture("blood1"));
+        Sprite sprite = new Sprite(ResourceManager.getTexture("black_hole"));
         SpriteComponent spriteComponent = new SpriteComponent(sprite);
         sprite.setCenter(pos.x, pos.y);
 
-        PositionComponent positionComponent = new PositionComponent(pos.x, pos.y);
+        Vector2 position = new Vector2(pos.x, pos.y);
 
-        entity.add(new BlackHoleComponent()).add(new RenderComponent(0)).add(spriteComponent).add(positionComponent);
+        PositionComponent positionComponent = new PositionComponent(position);
+        BodyComponent bodyComponent = new BodyComponent(positionComponent, BodyFactory.getInstance().generate(entity, "black_hole.json", position));
+
+        entity.add(new BlackHoleComponent()).add(new RenderComponent(0)).add(spriteComponent).add(positionComponent).add(bodyComponent);
 
         EntityManager.getInstance().addEntity(entity);
     }
