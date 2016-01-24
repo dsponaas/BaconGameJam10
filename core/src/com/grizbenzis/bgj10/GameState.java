@@ -110,7 +110,7 @@ public class GameState {
             spawnLargeAsteroid();
         }
         if (_alienSpawnTimer < 0f && _alienCount < getMaxAliens()) {
-            _alienSpawnTimer = getSpawnTimer();
+            _alienSpawnTimer = getAlienSpawnTimer();
             spawnAlien();
         }
         if(_levelTimer < 0f) {
@@ -142,6 +142,10 @@ public class GameState {
             spawnTimer *= spawnMod;
         }
         return spawnTimer;
+    }
+
+    private final float getAlienSpawnTimer() {
+        return Constants.ALIEN_DEFAULT_SPAWN_TIMER;
     }
 
     private final float getBlackholeTimer() {
