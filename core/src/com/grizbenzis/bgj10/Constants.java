@@ -18,7 +18,7 @@ public class Constants {
 
     public static final float BASE_SPAWN_TIMER = 600f;
     public static final float TIME_PER_LEVEL = 600f;
-    public static final int INITIAL_LIVES_COUNT = 2;
+    public static final int INITIAL_LIVES_COUNT = 10;
 
     public static final short BITMASK_PLAYER = 0x0001;
     public static final short BITMASK_ENEMY = 0x0002;

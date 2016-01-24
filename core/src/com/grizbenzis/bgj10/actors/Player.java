@@ -68,7 +68,7 @@ public class Player extends Actor {
                 BodyComponent bodyComponent = _bodyComponents.get(getEntity());
                 Fixture fixture = bodyComponent.body.getFixtureList().get(0);
                 Filter filter = fixture.getFilterData();
-                filter.maskBits = Constants.BITMASK_LEVEL_BOUNDS | Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP;
+                filter.maskBits = Constants.BITMASK_LEVEL_BOUNDS | Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP | Constants.BITMASK_ALIEN;
                 fixture.setFilterData(filter);
                 playerDataComponent.invincibilityTime = -1f;
             }
