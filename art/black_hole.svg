@@ -24,15 +24,15 @@
      id="defs4">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient8563">
+       id="linearGradient3375">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#800080;stop-opacity:1;"
          offset="0"
-         id="stop8565" />
+         id="stop3377" />
       <stop
-         style="stop-color:#800080;stop-opacity:1"
+         style="stop-color:#ff00ff;stop-opacity:1"
          offset="1"
-         id="stop8567" />
+         id="stop3379" />
     </linearGradient>
     <filter
        inkscape:label="Swirl"
@@ -214,15 +214,15 @@
     </filter>
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient8563"
-       id="radialGradient8569"
+       xlink:href="#linearGradient3375"
+       id="radialGradient3381"
        cx="175.97957"
        cy="450.66837"
        fx="175.97957"
        fy="450.66837"
        r="20.049168"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.8016876,5.1622893e-6,-8.4989344e-7,1.8272015,-141.08027,-372.7945)" />
+       gradientTransform="matrix(-1.0428042e-6,0.9697718,-1.2363432,-8.1020975e-7,733.16054,280.00871)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -231,17 +231,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.37"
-     inkscape:cx="30.133484"
-     inkscape:cy="16.404819"
+     inkscape:zoom="11.185"
+     inkscape:cx="40.339231"
+     inkscape:cy="15.369595"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-object-midpoints="true"
-     inkscape:window-width="1916"
-     inkscape:window-height="1155"
-     inkscape:window-x="4"
-     inkscape:window-y="1"
+     inkscape:window-width="1440"
+     inkscape:window-height="775"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      units="px"
      fit-margin-top="0"
@@ -267,7 +267,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -277,7 +277,7 @@
      id="layer1"
      transform="translate(-156,-430.64792)">
     <circle
-       style="fill:url(#radialGradient8569);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#radialGradient3381);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path8475"
        cx="175.97957"
        cy="450.66837"

@@ -29,7 +29,7 @@ public class Constants {
     public static final short BITMASK_BLACK_HOLE = 0x0040;
     public static final short BITMASK_ALIEN = 0x0080;
 
-    public static final float PLAYER_ROTATION_SPEED = 1f;
+    public static final float PLAYER_ROTATION_SPEED = 1.5f;
     public static final float BULLET_SPEED = .1f;
     public static final float BULLET_EXPLOSION_DURATION = 30f;
     public static final float SHOOTING_COOLDOWN = 12f;
@@ -44,21 +44,21 @@ public class Constants {
     public static final float BLOOD_FADE_TIME = 20f;
     public static final float BLEED_INTERVAL = 5f;
 
-    public static final float ALIEN_DEFAULT_SPAWN_TIMER = 500f;
-    public static final float ALIEN_SPAWN_SPEED_FACTOR = 1.1f;
+    public static final float ALIEN_DEFAULT_SPAWN_TIMER = 600f;
+    public static final float ALIEN_SPAWN_SPEED_FACTOR = 1.025f;
 
     public static final float LARGE_ASTEROID_SPAWN_SPEED_FACTOR = 0.5f;
-    public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1f;
+    public static final float LARGE_ASTEROID_TORQUE_FACTOR = 1.5f;
     public static final float MEDIUM_ASTEROID_SPAWN_SPEED_FACTOR = .5f;
     public static final int MEDIUM_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 0.3f;
+    public static final float MEDIUM_ASTEROID_TORQUE_FACTOR = 0.4f;
     public static final float SMALL_ASTEROID_SPAWN_SPEED_FACTOR = .3f;
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
-    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 0.1f;
+    public static final float SMALL_ASTEROID_TORQUE_FACTOR = 0.2f;
 
-    public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 500f;
+    public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 750f;
     public static final int BLACK_HOLE_MIN_LEVEL = 4;
-    public static final float BLACK_HOLE_POS_BUFFER = 200f;
+    public static final float BLACK_HOLE_POS_BUFFER = 300f;
     public static final float BLACK_HOLE_MAX_GRAV_DIST_SQUARED = 120000f;
     public static final float BLACK_HOLE_LIFE_TIME = 180f;
     public static final float BLACK_HOLE_MAX_GRAV = 0.2f;
