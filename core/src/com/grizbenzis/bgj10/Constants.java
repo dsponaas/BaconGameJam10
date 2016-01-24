@@ -52,6 +52,9 @@ public class Constants {
     public static final int SMALL_ASTEROID_SPAWN_QUANTITY = 2;
     public static final float SMALL_ASTEROID_TORQUE_FACTOR = 1000f;
 
+    public static final float BLACK_HOLE_DEFAULT_SPAWN_TIMER = 1000f;
+    public static final int BLACK_HOLE_MIN_LEVEL = 1;
+
     public static final float PLAYER_SHOOTING_VOLUME = 0.2f;
     public static final float EXPLOSION_VOLUME = 0.6f;
     public static final float DEATH_VOLUME = 1f;

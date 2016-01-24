@@ -118,6 +118,13 @@ public class GameState {
         return spawnTimer;
     }
 
+    private final float getBlackholeTimer() {
+        if(_level < Constants.BLACK_HOLE_MIN_LEVEL) {
+//            _blackHoleTimer;
+        }
+        return 0f;
+    }
+
     private final float POWERUP_LEVEL_BOUNDS_BUFFER = 100f;
     public void spawnPowerup() {
         Entity entity = new Entity();
