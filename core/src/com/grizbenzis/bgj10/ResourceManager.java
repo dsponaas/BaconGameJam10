@@ -39,6 +39,9 @@ public class ResourceManager {
         _textures.put("gameover", new Texture("gameover.png"));
         _textures.put("explosion", new Texture("explosion.png"));
         _textures.put("explosion_large", new Texture("explosion_large.png"));
+        _textures.put("background_rear", new Texture("background_rear.png"));
+        _textures.put("background_middle", new Texture("background_middle.png"));
+        _textures.put("background_front", new Texture("background_front.png"));
 
         initFonts();
     }

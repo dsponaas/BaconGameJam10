@@ -1,5 +1,6 @@
 {
   BodyDef : {
+    fixedRotation: false,
     type: DynamicBody,
     collisionType: PLAYER,
     dimensionX: 56,
@@ -12,7 +13,8 @@
       type: RectangleShape,
       width: 14,
       height: 50,
-      restitution: 0,
+      density: 0.025,
+      restitution: 0.25,
       x: 14,
       y: 0
     },
