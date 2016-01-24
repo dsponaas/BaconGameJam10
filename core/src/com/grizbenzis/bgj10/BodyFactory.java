@@ -51,22 +51,26 @@ public class BodyFactory {
             categoryBits = Constants.BITMASK_EXPLOSION;
         else if(collisionType.equalsIgnoreCase("BLACK_HOLE"))
             categoryBits = Constants.BITMASK_BLACK_HOLE;
+        else if(collisionType.equalsIgnoreCase("ALIEN"))
+            categoryBits = Constants.BITMASK_ALIEN;
         else
             Gdx.app.log("WARNING", "Entity Box2D collision type undefined - " + collisionType);
 
         short maskingBits = 0;
         if(Constants.BITMASK_PLAYER_BULLET == categoryBits)
-            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_LEVEL_BOUNDS | Constants.BITMASK_POWERUP;
+            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_LEVEL_BOUNDS | Constants.BITMASK_POWERUP | Constants.BITMASK_ALIEN;
         else if(Constants.BITMASK_ENEMY == categoryBits)
             maskingBits = Constants.BITMASK_PLAYER | Constants.BITMASK_PLAYER_BULLET | Constants.BITMASK_ENEMY | Constants.BITMASK_EXPLOSION;
         else if(Constants.BITMASK_PLAYER == categoryBits)
-            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP;
+            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP | Constants.BITMASK_ALIEN;
         else if(Constants.BITMASK_POWERUP == categoryBits)
             maskingBits = Constants.BITMASK_PLAYER | Constants.BITMASK_PLAYER_BULLET | Constants.BITMASK_EXPLOSION;
         else if(Constants.BITMASK_EXPLOSION == categoryBits)
-            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP;
+            maskingBits = Constants.BITMASK_ENEMY | Constants.BITMASK_POWERUP | Constants.BITMASK_ALIEN;
         else if(Constants.BITMASK_BLACK_HOLE == categoryBits)
             maskingBits = Constants.BITMASK_PLAYER;
+        else if(Constants.BITMASK_ALIEN == categoryBits)
+            maskingBits = Constants.BITMASK_PLAYER | Constants.BITMASK_PLAYER_BULLET | Constants.BITMASK_EXPLOSION;
         else
             Gdx.app.log("WARNING", "Entity Box2D masking bits undefined - " + categoryBits);
 

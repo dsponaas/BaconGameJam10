@@ -1,7 +1,7 @@
 {
   BodyDef : {
     type: DynamicBody,
-    collisionType: ENEMY,
+    collisionType: ALIEN,
     dimensionX: 80,
     dimensionY: 40
   },
