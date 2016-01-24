@@ -406,7 +406,7 @@ public class GameState {
     }
 
     public int getMaxEnemies() {
-        return (int)(((float)_level * 1.5f) + 5f);
+        return (int)(((float)_level * 6f) + 5f);
 //        switch(_level) {
 //            case 1: return 5;
 //            case 2: return 6;
