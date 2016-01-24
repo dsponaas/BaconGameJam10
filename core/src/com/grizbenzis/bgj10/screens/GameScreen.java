@@ -194,8 +194,8 @@ public class GameScreen implements Screen {
             _spriteBatch.draw(ResourceManager.getTexture("powerup_sprd_small"), drawPosX, drawPosY);
             drawPosX -= POWERUP_BUFFER_HACK;
         }
-        if (playerData.rapidShotTime > 0f) {
-            _spriteBatch.draw(ResourceManager.getTexture("powerup_rpd_small"), drawPosX, drawPosY);
+        if (playerData.explosionUpTime > 0f) {
+            _spriteBatch.draw(ResourceManager.getTexture("powerup_expl_small"), drawPosX, drawPosY);
             drawPosX -= POWERUP_BUFFER_HACK;
         }
         if (playerData.points2xTime > 0f) {

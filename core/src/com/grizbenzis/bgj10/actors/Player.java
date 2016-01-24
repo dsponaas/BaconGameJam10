@@ -168,6 +168,8 @@ public class Player extends Actor {
     }
 
     private void shoot( float posX, float posY, float angle, float power ) {
+        PlayerDataComponent playerDataComponent = _playerDataComponents.get(getEntity());
+
         Entity bulletEntity = new Entity();
         SpriteComponent bulletSprite = new SpriteComponent(new Sprite(ResourceManager.getTexture("bullet")));
 
@@ -176,6 +178,8 @@ public class Player extends Actor {
         BodyComponent bulletBody = new BodyComponent(bulletPosition, body);
         RenderComponent renderComponent = new RenderComponent(0);
         BulletComponent bulletComponent = new BulletComponent();
+        if (playerDataComponent.explosionUpTime > 0f)
+            bulletComponent.largeExplosion = true;
 
         bulletEntity.add(bulletSprite).add(bulletPosition).add(bulletBody).add(renderComponent).add(bulletComponent);
         EntityManager.getInstance().addEntity(bulletEntity);

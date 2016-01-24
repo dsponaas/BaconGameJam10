@@ -35,8 +35,8 @@ public class PowerupSystem extends IteratingSystem {
             else if(Constants.PowerupType.SPRD_SHOT.ordinal() == powerupComponent.type) {
                 playerDataComponent.spreadShotTime = Constants.POWERUP_TIMER;
             }
-            else if(Constants.PowerupType.RPD_SHOT.ordinal() == powerupComponent.type) {
-                playerDataComponent.rapidShotTime = Constants.POWERUP_TIMER;
+            else if(Constants.PowerupType.EXPLOSION_UP.ordinal() == powerupComponent.type) {
+                playerDataComponent.explosionUpTime = Constants.POWERUP_TIMER;
             }
             else if(Constants.PowerupType.EXTRA_LIFE.ordinal() == powerupComponent.type) {
                 GameState.getInstance().incrementLives();

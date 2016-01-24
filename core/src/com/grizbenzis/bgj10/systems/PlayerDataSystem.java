@@ -27,8 +27,8 @@ public class PlayerDataSystem extends IteratingSystem {
         PlayerDataComponent playerDataComponent = _playerDataComponents.get(entity);
         RenderComponent renderComponent = _renderComponents.get(entity);
 
-        if (playerDataComponent.rapidShotTime >= 0f) {
-            playerDataComponent.rapidShotTime -= (float) Time.time;
+        if (playerDataComponent.explosionUpTime >= 0f) {
+            playerDataComponent.explosionUpTime -= (float) Time.time;
         }
         if (playerDataComponent.spreadShotTime >= 0f) {
             playerDataComponent.spreadShotTime -= (float) Time.time;

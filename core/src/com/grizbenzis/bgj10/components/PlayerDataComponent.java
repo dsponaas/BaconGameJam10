@@ -13,7 +13,7 @@ public class PlayerDataComponent extends Component {
     public float playerDeathTime;
 
     public float points2xTime;
-    public float rapidShotTime;
+    public float explosionUpTime;
     public float spreadShotTime;
 
     public PlayerDataComponent() {
@@ -22,7 +22,7 @@ public class PlayerDataComponent extends Component {
         playerDeathTime = -1f;
 
         points2xTime = -1f;
-        rapidShotTime = -1f;
+        explosionUpTime = -1f;
         spreadShotTime = -1f;
     }
 

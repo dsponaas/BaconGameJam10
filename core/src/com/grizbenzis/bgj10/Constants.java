@@ -50,7 +50,7 @@ public class Constants {
 
     public enum PowerupType {
         POINTS_2X,
-        RPD_SHOT,
+        EXPLOSION_UP,
         SPRD_SHOT,
         EXTRA_LIFE;
 
@@ -59,7 +59,7 @@ public class Constants {
                 case 0:
                     return POINTS_2X;
                 case 1:
-                    return RPD_SHOT;
+                    return EXPLOSION_UP;
                 case 2:
                     return SPRD_SHOT;
                 case 3:

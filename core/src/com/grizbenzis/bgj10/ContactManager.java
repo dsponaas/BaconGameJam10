@@ -60,6 +60,17 @@ public class ContactManager implements ContactListener {
             }
         }
 
+        else if((Constants.BITMASK_EXPLOSION == fixtureAType) && (Constants.BITMASK_ENEMY == fixtureBType)) {
+            EnemyDataComponent enemyDataComponent = entityB.getComponent(EnemyDataComponent.class);
+            if(null != enemyDataComponent)
+                killEnemy(entityB, bodyB, fixtureB, enemyDataComponent);
+        }
+        else if((Constants.BITMASK_EXPLOSION == fixtureBType) && (Constants.BITMASK_ENEMY == fixtureAType)) {
+            EnemyDataComponent enemyDataComponent = entityA.getComponent(EnemyDataComponent.class);
+            if(null != enemyDataComponent)
+                killEnemy(entityA, bodyA, fixtureA, enemyDataComponent);
+        }
+
         else if((Constants.BITMASK_PLAYER == fixtureAType) && (fixtureA.isSensor()) && (Constants.BITMASK_ENEMY == fixtureBType)) {
             PlayerDataComponent playerDataComponent = _playerDataComponents.get(entityA);
             if(playerDataComponent.alive && (playerDataComponent.invincibilityTime < 0f))
@@ -76,6 +87,15 @@ public class ContactManager implements ContactListener {
             powerupComponent.pickedUp = true;
         }
         else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER == fixtureAType)) {
+            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
+            powerupComponent.pickedUp = true;
+        }
+
+        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_EXPLOSION == fixtureBType)) {
+            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
+            powerupComponent.pickedUp = true;
+        }
+        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_EXPLOSION == fixtureAType)) {
             PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }

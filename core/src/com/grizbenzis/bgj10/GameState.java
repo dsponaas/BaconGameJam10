@@ -129,8 +129,8 @@ public class GameState {
         PositionComponent positionComponent = new PositionComponent(xPos, yPos);
 
         Sprite sprite = null;
-        if(type == Constants.PowerupType.RPD_SHOT.ordinal())
-            sprite = new Sprite(ResourceManager.getTexture("powerup_rpd"));
+        if(type == Constants.PowerupType.EXPLOSION_UP.ordinal())
+            sprite = new Sprite(ResourceManager.getTexture("powerup_expl"));
         else if(type == Constants.PowerupType.SPRD_SHOT.ordinal())
             sprite = new Sprite(ResourceManager.getTexture("powerup_sprd"));
         else if(type == Constants.PowerupType.POINTS_2X.ordinal())
