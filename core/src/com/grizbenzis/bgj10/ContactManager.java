@@ -97,6 +97,15 @@ public class ContactManager implements ContactListener {
             PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
             powerupComponent.pickedUp = true;
         }
+
+        else if((Constants.BITMASK_POWERUP == fixtureAType) && (Constants.BITMASK_PLAYER_BULLET == fixtureBType)) {
+            PowerupComponent powerupComponent = entityA.getComponent(PowerupComponent.class);
+            powerupComponent.pickedUp = true;
+        }
+        else if((Constants.BITMASK_POWERUP == fixtureBType) && (Constants.BITMASK_PLAYER_BULLET == fixtureAType)) {
+            PowerupComponent powerupComponent = entityB.getComponent(PowerupComponent.class);
+            powerupComponent.pickedUp = true;
+        }
     }
 
     private void killEnemy(Fixture fixture, EnemyDataComponent enemyDataComponent) {
