@@ -163,6 +163,8 @@ public class GameScreen implements Screen {
         PlayerDataSystem playerDataSystem = new PlayerDataSystem(3);
         PowerupSystem powerupSystem = new PowerupSystem(4);
         EnemyDeathSystem enemyDeathSystem = new EnemyDeathSystem(5);
+        BulletSystem bulletSystem = new BulletSystem(6);
+        ExplosionSystem explosionSystem = new ExplosionSystem(7);
 
         engine.addSystem(parallaxSystem);
         engine.addSystem(positionSystem);
@@ -170,6 +172,8 @@ public class GameScreen implements Screen {
         engine.addSystem(playerDataSystem);
         engine.addSystem(powerupSystem);
         engine.addSystem(enemyDeathSystem);
+        engine.addSystem(bulletSystem);
+        engine.addSystem(explosionSystem);
 
         return engine;
     }

@@ -1,0 +1,23 @@
+{
+  BodyDef : {
+    fixedRotation: true,
+    type: StaticBody,
+    gravityScale: 0,
+    collisionType: EXPLOSION,
+    dimensionX: 100,
+    dimensionY: 100
+  },
+  Fixtures : [
+    {
+      description: none,
+      isSensor: true,
+      type: CircleShape,
+      radius: 50,
+      density: 1,
+      friction: 0,
+      restitution: 0,
+      x: 0,
+      y: 0
+    }
+  ]
+}
